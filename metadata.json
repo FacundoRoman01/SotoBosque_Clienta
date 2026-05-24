@@ -1,0 +1,6 @@
+{
+  "name": "Sotobosque",
+  "description": "Landing page premium y minimalista para el complejo de cabañas Sotobosque en Sierra de los Padres.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
