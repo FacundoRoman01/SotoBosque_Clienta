@@ -21,7 +21,7 @@ export interface Cabin {
 
 export const cabanasData: Cabin[] = [
   {
-    id: "roble",
+    id: "cabanaUno",
     numero: "CABAÑA 1",
     nombre: "CABAÑA 1",
     tagline: "IDEAL PARA FAMILIAS CON JARDÍN Y QUINCHO",
@@ -29,7 +29,7 @@ export const cabanasData: Cabin[] = [
     ambientes: 2,   //ambientes dos  0 1 planta o dos plantas
     dormitorios: 2,
     banos: 2,
-    direccion: "Guaraníes entre Las Margaritas y Yanquetruz",
+    direccion: "Guaraníes entre Las Margaritas y Yanquetruz", //plantas poner de titulo
     // precio: "$100.000", 
     descripcion: "Cabaña distribuida en dos plantas con entrada para auto y jardín chico. Ofrece un living comedor acogedor y cocina totalmente equipada. Destaca por su cómodo quincho con parrilla, perfecto para disfrutar de asados en cualquier momento.",
     isPopular: true,
@@ -66,7 +66,7 @@ export const cabanasData: Cabin[] = [
   },
 
   {
-    id: "coihue",
+    id: "cabanaDos",
     numero: "CABAÑA 2",
     nombre: "CABAÑA 2",
     tagline: "COMODIDAD Y DISEÑO PRÁCTICO",
@@ -110,7 +110,7 @@ export const cabanasData: Cabin[] = [
   },
 
   {
-    id: "aromo",
+    id: "cabanaTres",
     numero: "CABAÑA 3",
     nombre: "CABAÑA 3",
     tagline: "ENTRETENIMIENTO, RELAX Y GRAN CAPACIDAD",
@@ -167,7 +167,7 @@ export const cabanasData: Cabin[] = [
     dormir: "Planta Alta - Dorm. 1: 1 cama matrimonial. Dorm. 2: 2 camas matrimoniales. Estar: 2 camas individuales. Planta Baja - Dorm. 3: Habitación con bañera."
   },
   {
-    id: "lenga",
+    id: "unidad",
     numero: "UNIDAD",
     nombre: "UNIDAD",
     tagline: "MODERNO CON FOGÓN EXTERIOR",
@@ -220,7 +220,7 @@ export const cabanasData: Cabin[] = [
     dormir: "Dormitorio 1: Suite con baño privado. Dormitorio 2: Estándar. (Contactar para detalle de distribución de camas)."
   },
   {
-    id: "coihue",
+    id: "casa",
     numero: "CASA",
     nombre: "CASA",
     tagline: "CONFORT Y ESPACIO AL AIRE LIBRE",

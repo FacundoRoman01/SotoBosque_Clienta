@@ -78,7 +78,7 @@ export default function ForestPeraltaSection() {
         >
           {/* Unsplash beautiful rich high contrast forest entrance image */}
           <img
-            src="public\img\Fotos_bosque\bosquePeralta.webp"
+            src="\img\Fotos_bosque\bosquePeralta.webp"
             alt="Reserva Forestal Bosque Peralta Ramos"
             className="w-full h-full object-cover transition-transform duration-[4000ms] group-hover:scale-105"
           />
