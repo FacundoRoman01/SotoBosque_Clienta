@@ -7,7 +7,7 @@ interface BookingCallToActionProps {
 }
 
 export default function BookingCallToAction({ onOpenBooking }: BookingCallToActionProps) {
-  const whatsappUrl = `https://wa.me/542239876543?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
     "Hola Sotobosque! Quiero consultar disponibilidad para mi próxima escapada al bosque."
   )}`;
 
@@ -16,9 +16,9 @@ export default function BookingCallToAction({ onOpenBooking }: BookingCallToActi
       
       {/* Background Image of a dark, misty, gorgeous forest */}
       <img
-        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=1600"
+        src="\img\fondo_collage_cabanas.png"
         alt="Bosque SotoBosque"
-        className="absolute inset-0 w-full h-full object-cover scale-105 brightness-[0.35]"
+        className="absolute inset-0 w-full h-full object-cover scale-105 brightness-[0.65]"
       />
 
       {/* Gradient Dark Vignette Overlay for premium readable text */}
@@ -43,12 +43,12 @@ export default function BookingCallToAction({ onOpenBooking }: BookingCallToActi
         {/* Responsive Dual Action CTA Buttons bar matching image layout perfectly */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full justify-center">
           
-          <button
+          {/* <button
             onClick={onOpenBooking}
             className="cursor-pointer w-full sm:w-auto px-8 py-4 bg-[#FAF8F5] hover:bg-white text-[#2C3C2C] hover:scale-105 active:scale-95 rounded-full text-xs font-bold font-sans tracking-[0.2em] uppercase transition-all duration-300 shadow-xl"
           >
             CONSULTAR DISPONIBILIDAD
-          </button>
+          </button> */}
 
           <a
             href={whatsappUrl}

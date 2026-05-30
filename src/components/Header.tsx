@@ -24,7 +24,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
 
   const menuItems = [
     { label: "BIENVENIDA", href: "#bienvenida" },
-    { label: "LAS 4 CABAÑAS", href: "#cabanas" },
+    { label: "LOS ALOJAMIENTOS", href: "#cabanas" },
     { label: "MOMENTOS", href: "#momentos" },
     { label: "UBICACIÓN", href: "#ubicacion" },
   ];
@@ -48,34 +48,27 @@ export default function Header({ onOpenBooking }: HeaderProps) {
     >
       {/* Ajuste: padding px-4 en vez de px-6 para ganar más espacio en pantallas chicas */}
       <div className="max-w-7xl mx-auto px-4 md:px-12 flex items-center justify-between">
-        
-        {/* Logo */}
+      {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-2 md:gap-3.5 group transition-opacity hover:opacity-90" // <-- Ajuste: gap-2 en mobile
+          className="flex items-center gap-2 md:gap-3.5 group transition-opacity hover:opacity-90"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <svg
-            className={`w-5 h-5 md:w-5.5 md:h-5.5 transition-transform group-hover:scale-110 ${
-              isScrolled ? "text-[#435843]" : "text-white"
-            }`}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="12,3 2,19 22,19" />
-            <polygon points="12,8 5,19 19,19" />
-            <line x1="12" y1="11" x2="12" y2="19" />
-          </svg>
-          <span className="font-serif text-lg md:text-2xl tracking-wide font-medium"> {/* <-- Ajuste: text-lg en mobile */}
-            Sotobosque
-          </span>
+          <img 
+            src="/img/logo/logo-horizontal_sylvina.svg" 
+            alt="Logo de Cabañas Sylviane" 
+            className={`h-10 md:h-15 w-auto transition-all duration-300 ${
+              !isScrolled ? "brightness-0 invert" : ""
+            }`} 
+          />
+          {/* <span className={`font-serif text-lg md:text-2xl tracking-wide font-medium transition-colors duration-300 ${
+            !isScrolled ? "text-white" : "text-[#435843]"
+          }`}>
+            Cabañas Sylviane
+          </span> */}
         </a>
 
         {/* Desktop Navigation Links (Igual) */}
@@ -96,8 +89,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
         </nav>
 
         {/* CTA Button Desktop (Igual) */}
-        <div className="hidden md:block">
-          <button
+         <div className="hidden md:block">
+          {/* <button
             onClick={onOpenBooking}
             className={`cursor-pointer px-7 py-2.5 rounded-full font-sans text-xs tracking-[0.18em] font-bold uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm ${
               isScrolled
@@ -106,21 +99,21 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             }`}
           >
             RESERVAR
-          </button>
-        </div>
+          </button> */}
+        </div> 
 
-        {/* Mobile menu button */}
-        <div className="flex md:hidden items-center gap-2"> {/* <-- Ajuste: gap-2 en vez de gap-4 */}
-          <button
+       
+        <div className="flex md:hidden items-center gap-2"> 
+          {/* <button
             onClick={onOpenBooking}
-            className={`cursor-pointer px-3 py-1.5 rounded-full font-sans text-[9px] tracking-wider font-semibold uppercase ${ // <-- Ajuste: px-3, text-[9px]
+            className={`cursor-pointer px-3 py-1.5 rounded-full font-sans text-[9px] tracking-wider font-semibold uppercase ${
               isScrolled
                 ? "bg-[#435843] text-[#FAF8F5]"
                 : "bg-[#FAF8F5] text-[#435843]"
             }`}
           >
             RESERVAR
-          </button>
+          </button> */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1 hover:opacity-85"
@@ -150,7 +143,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </a>
             ))}
           </nav>
-          <button
+          {/* <button
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenBooking();
@@ -158,7 +151,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             className="w-full text-center py-3 bg-[#435843] text-[#FAF8F5] rounded-full text-xs tracking-widest font-medium uppercase mt-2 shadow-sm"
           >
             RESERVAR AHORA
-          </button>
+          </button> */}
         </div>
       )}
     </header>

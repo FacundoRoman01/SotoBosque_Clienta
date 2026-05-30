@@ -4,10 +4,10 @@ export interface Cabin {
   nombre: string;
   tagline: string;
   huespedes: number;
-  m2: number;
+  ambientes: number;
   dormitorios: number;
   banos: number;
-  precio: string;
+  // precio: string;
   descripcion: string;
   isPopular?: boolean;
   imagen: string;
@@ -16,80 +16,120 @@ export interface Cabin {
   distintivo: string[];
   comodidades: string[];
   dormir: string;
+  direccion : string;
 }
 
 export const cabanasData: Cabin[] = [
   {
     id: "roble",
-    numero: "CABAÑA 01",
-    nombre: "Roble",
-    tagline: "LA CABAÑA INSIGNIA",
-    huespedes: 4,
-    m2: 75,
+    numero: "CABAÑA 1",
+    nombre: "CABAÑA 1",
+    tagline: "IDEAL PARA FAMILIAS CON JARDÍN Y QUINCHO",
+    huespedes: 6, // Ajustado por "5/6 personas"
+    ambientes: 2,   //ambientes dos  0 1 planta o dos plantas
     dormitorios: 2,
     banos: 2,
-    precio: "$98.000",
-    descripcion: "Roble es la más amplia del complejo. Su living de doble altura abre sobre un ventanal de 4 metros que enmarca la arboleda como un cuadro vivo. La cocina integrada con isla de mármol travertino, el hogar a leña empotrado y la galería techada con deck de quebracho hacen que cualquier momento del día — un café temprano, una cena larga, una siesta de invierno — se sienta especial.",
+    direccion: "Guaraníes entre Las Margaritas y Yanquetruz",
+    // precio: "$100.000", 
+    descripcion: "Cabaña distribuida en dos plantas con entrada para auto y jardín chico. Ofrece un living comedor acogedor y cocina totalmente equipada. Destaca por su cómodo quincho con parrilla, perfecto para disfrutar de asados en cualquier momento.",
     isPopular: true,
-   imagen: "/img/foto_cabana_1_webP/foto-silvia-cabana-afuera.webp",
+    imagen: "/img/foto_cabana_1_webP/imagen-silvia-1.webp",
     galeria: [
-      "/img/foto_cabana_1_webP/foto-silvia-cabana-afuera.webp",
-      "/img/foto_cabana_1_webP/foto-silvia-cama.webp",
-      "/img/foto_cabana_1_webP/foto-silvia-living.webp",
       "/img/foto_cabana_1_webP/imagen-silvia-1.webp",
       "/img/foto_cabana_1_webP/imagen-silvi-2.webp",
+      "/img/foto_cabana_1_webP/cabanaUno_nuevo.webp",
+      "/img/foto_cabana_1_webP/cabanaUno_fotonuevaDos.webp",
+      "/img/foto_cabana_1_webP/imagen_silvia_nuevo.webp",
       "/img/foto_cabana_1_webP/imagen-silvia-3.webp",
       "/img/foto_cabana_1_webP/imagen-silvia-4.webp",
-      "/img/foto_cabana_1_webP/imagen-silvia-5.webp",
-      "/img/foto_cabana_1_webP/imagen-silvia-6.webp",
-      "/img/foto_cabana_1_webP/imagen-silvia-7.webp",
-      "/img/foto_cabana_1_webP/imagen-silivia-8.webp",
-      "/img/foto_cabana_1_webP/imagen-silvia-9.webp",
-      "/img/foto_cabana_1_webP/imagen-silvia-10.webp"
     ],
-    detalles: ["Hogar a leña", "Galería privada", "Doble altura", "Deck de madera", "Ventilación cruzada", "Cafetera de especialidad"],
+    detalles: [
+      "2 plantas",
+      "Entrada para auto",
+      "Jardín chico",
+      "Quincho cerrado"
+    ],
     distintivo: [
-      "Ventanal panorámico al bosque",
-      "Galería con jacuzzi privado",
-      "Hogar a leña central"
+      "Bañera en el dormitorio principal",
+      "Quincho cerrado con parrilla",
+      "Jardín privado y entrada para auto"
     ],
     comodidades: [
-      "Hogar a leña",
-      "Jacuzzi exterior",
-      "Estufa a leña + losa radiante",
-      "Lavavajillas",
-      "Cafetera de espresso",
-      "Ropa blanca premium",
-      "Parrilla techada",
-      "Wi-Fi fibra óptica",
+      "Alarma",
       "Cocina equipada",
-      "Smart TV",
-      "Sommiers king",
-      "Estacionamiento techado"
+      "Wi-Fi de alta velocidad",
+      "Living comedor",
+      "Ropa de cama",
+      "Quincho y Parrilla"
     ],
-    dormir: "1 cama king · 2 camas individuales"
+    dormir: "Dorm. Principal (Suite): 1 matrimonial + 1 cucheta. Dorm. Secundario: Balconeado a la escalera. Living: Sofá-cama."
   },
+
+  {
+    id: "coihue",
+    numero: "CABAÑA 2",
+    nombre: "CABAÑA 2",
+    tagline: "COMODIDAD Y DISEÑO PRÁCTICO",
+    huespedes: 6,
+    ambientes: 1,
+    dormitorios: 2,
+    banos: 1,
+    direccion: "Guaraníes entre Las Margaritas y Yanquetruz",
+    // precio: "$120.000",
+    descripcion: "Cabaña práctica y acogedora en una sola planta. Cuenta con un cálido living con sofá cama. Su característica más distintiva es la parrilla incorporada a la cocina, ideal para cocinar y disfrutar en familia sin necesidad de salir al exterior.",
+    imagen: "/img/foto-cabana-4/imagen_silvia_cabana4_5_.webp",
+    galeria: [
+      "/img/foto-cabana-4/imagen_silvia_cabana4_1_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_2_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_3_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_4_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_5_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_6_.webp",
+      "/img/foto-cabana-4/imagen_silvia_cabana4_7_.webp",
+    ],
+    detalles: [
+      "1 planta",
+      "Parrilla interior",
+      "Acceso directo al baño",
+      "Living con sofá cama"
+    ],
+    distintivo: [
+      "Parrilla interior incorporada a la cocina",
+      "Dormitorio principal con acceso directo al baño",
+      "Distribución práctica en una planta"
+    ],
+    comodidades: [
+      "Alarma",
+      "Cocina equipada",
+      "Wi-Fi de alta velocidad",
+      "Parrilla interior",
+      "Ropa de cama",
+      "Living"
+    ],
+    dormir: "Dormitorio 1: 1 cama matrimonial (con entrada directa al baño). Dormitorio 2 (cerrado): 1 cucheta + 1 cama extra extraíble (cama nido/abajo). Living: 1 Sofá-cama doble."
+  },
+
   {
     id: "aromo",
-    numero: "CABAÑA 02",
-    nombre: "Aromo",
-    tagline: "PARA PAREJAS, ÍNTIMA Y CÁLIDA",
-    huespedes: 2,
-    m2: 48,
-    dormitorios: 1,
-    banos: 1,
-    precio: "$72.000",
-    descripcion: "Aromo es pequeña, perfumada y profundamente privada. Diseñada especialmente para parejas que buscan intimidad y calidez, está rodeada por un denso bosquecillo de tilos y retamas silvestres. Cuenta con un deck elevado donde se encuentra el hot tub y ventanales integrales que permiten contemplar los colores del atardecer directamente desde la cama.",
-   imagen: "/img/foto_cabaña_2_webP/silvia-cabana-II-1.webp",
-    
-   galeria: [
-      "/img/foto_cabaña_2_webP/silvia-cabana-II-1.webp", 
+    numero: "CABAÑA 3",
+    nombre: "CABAÑA 3",
+    tagline: "ENTRETENIMIENTO, RELAX Y GRAN CAPACIDAD",
+    huespedes: 8,
+    ambientes: 2,
+    dormitorios: 3,
+    banos: 2,
+    direccion: "Tres Marías y Yanquetruz 100",
+    // precio: "$72.000",
+    descripcion: "La propiedad más completa, ideal para entretenimiento y relax. Distribuida en dos plantas, cuenta con cocina separada, amplio living comedor. En el exterior deslumbra con su pileta, solarium con cascada y parrilla. Además, ofrece un sector de juegos con pool y ping pong.",
+    imagen: "/img/foto_cabaña_2_webP/silvia-cabana-II-1.webp",
+    galeria: [
+      "/img/foto_cabaña_2_webP/silvia-cabana-II-1.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-2.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-3.webp",
-      
+      "/img/foto_cabaña_2_webP/Cascada.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-4.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-5.webp",
-      "/img/foto_cabaña_2_webP/silvia-cabana-II-6.webp", 
+      "/img/foto_cabaña_2_webP/silvia-cabana-II-6.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-7.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-8.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-9.webp",
@@ -103,41 +143,42 @@ export const cabanasData: Cabin[] = [
       "/img/foto_cabaña_2_webP/silvia-cabana-II-17.webp",
       "/img/foto_cabaña_2_webP/silvia-cabana-II-18.webp"
     ],
-    detalles: ["Hot tub exterior", "Cama King size", "Perfumada naturalmente", "Ventanales al bosque", "Parrilla privada", "Amenities orgánicos"],
+    detalles: [
+      "2 plantas",
+      "Pileta con cascada",
+      "Sector de juegos",
+      "Cocina separada"
+    ],
     distintivo: [
-      "Hot tub exterior en el deck",
-      "Rodeada de tilos fragantes",
-      "Aislamiento forestal absoluto"
+      "Pileta y solarium exterior con cascada",
+      "Sector de juegos (Mesa de Pool y Ping Pong)",
+      "Amplio espacio exterior con parrilla"
     ],
     comodidades: [
-      "Hot tub privado",
+      "Alarma",
+      "Pileta y Solarium",
       "Wi-Fi de alta velocidad",
-      "Calefacción por radiadores",
-      "Amenities orgánicos",
-      "Cama King premiun",
-      "Plentitud visual",
-      "Parrilla privada",
-      "Cafetera Nespresso",
-      "Caja de seguridad",
-      "Ropa de cama egipcia"
+      "Pool y Ping Pong",
+      "Ropa de cama",
+      "Parrilla exterior",
+      "Cocina separada",
+      "Living y Comedor"
     ],
-    dormir: "1 cama king de tres metros"
+    dormir: "Planta Alta - Dorm. 1: 1 cama matrimonial. Dorm. 2: 2 camas matrimoniales. Estar: 2 camas individuales. Planta Baja - Dorm. 3: Habitación con bañera."
   },
   {
     id: "lenga",
-    numero: "CABAÑA 03",
-    nombre: "Lenga",
-    tagline: "REFUGIO DE ALTURA",
-    huespedes: 4,
-    m2: 70,
+    numero: "UNIDAD",
+    nombre: "UNIDAD",
+    tagline: "MODERNO CON FOGÓN EXTERIOR",
+    huespedes: 4, // La dueña indicó "Consultar", dejo 4 por el tipado numérico.
+    ambientes: 1,
     dormitorios: 2,
-    banos: 1,
-    precio: "$90.000",
-    descripcion: "Lenga se alza sobre pilotes de madera de quebracho, logrando una vista inigualable sobre la copa de los árboles y las sierras lejanas. El sol del atardecer inunda la sala principal, convirtiendo la hora dorada en un ritual silencioso y reparador. Ideal para almas aventureras que no renuncian al confort ejecutivo.",
-   // Imagen principal (sin el "public")
+    banos: 2,
+    direccion: "Boulevard Nuevo Bosque entre Las Margaritas y Diag  Gertrudis.",
+    // precio: "$90.000",
+    descripcion: "Departamento moderno y funcional, equipado con living, comedor y cocina integrados. En el exterior ofrece un cálido fogón, un rincón perfecto para disfrutar del fuego y las noches al aire libre en buena compañía.",
     imagen: "/img/foto_cabana_3_webP/silvia-cabana-III-1.webp",
-    
-    // Galería completa con las 17 fotos
     galeria: [
       "/img/foto_cabana_3_webP/silvia-cabana-III-1.webp",
       "/img/foto_cabana_3_webP/silvia-cabana-III-2.webp",
@@ -157,87 +198,92 @@ export const cabanasData: Cabin[] = [
       "/img/foto_cabana_3_webP/silvia-cabana-III-16.webp",
       "/img/foto_cabana_3_webP/silvia-cabana-III-17.webp"
     ],
-    detalles: ["Terraza mirador", "Desayuno seco", "Ducha escocesa", "Cava de vinos seleccionados", "Calefacción central", "Smart TV"],
+    detalles: [
+      "1 planta",
+      "Fogón exterior",
+      "Suite con baño privado",
+      "Ambientes integrados"
+    ],
     distintivo: [
-      "Terraza mirador elevada",
-      "Ducha escocesa relajante",
-      "Cava de vinos propia"
+      "Fogón exterior para reuniones",
+      "Dormitorio principal en suite",
+      "Ambientes amplios y bien distribuidos"
     ],
     comodidades: [
-      "Terraza con solárium",
-      "Cava climatizada",
-      "Losa radiante",
-      "Ducha con hidromasaje",
-      "Sommiers premium",
-      "Hogar a leña moderno",
-      "Wi-Fi fibra óptica",
-      "Parrilla completa",
-      "Ventanales rebatibles",
-      "Estacionamiento propio",
-      "Desayuno seco artesanal"
+      "Alarma",
+      "Living y Comedor",
+      "Wi-Fi de alta velocidad",
+      "Cocina equipada",
+      "Ropa de cama",
+      "Fogón exterior"
     ],
-    dormir: "1 cama queen · 2 camas individuales"
+    dormir: "Dormitorio 1: Suite con baño privado. Dormitorio 2: Estándar. (Contactar para detalle de distribución de camas)."
   },
   {
     id: "coihue",
-    numero: "CABAÑA 04",
-    nombre: "Coihue",
-    tagline: "SANTUARIO DE CALMA Y SILENCIO",
+    numero: "CASA",
+    nombre: "CASA",
+    tagline: "CONFORT Y ESPACIO AL AIRE LIBRE",
     huespedes: 6,
-    m2: 95,
-    dormitorios: 3,
+    ambientes: 1,
+    dormitorios: 2,
     banos: 2,
-    precio: "$120.000",
-    descripcion: "Coihue es la expresión máxima de la elegancia alpina integrada. Con capacidad para grupos familiares sofisticados, ofrece una pileta climatizada privada in-out integrada a la galería, ambientes majestuosos revestidos en madera de alerce, una cocina de chef completamente equipada y un hogar a leña colosal.",
-    imagen: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=1200",
+    direccion: "Tupac Amaru entre Calchaquies y Caroyas.",
+    // precio: "$120.000",
+    descripcion: "Casa funcional y muy cómoda, ideal para alojar hasta 6 personas. Destaca por contar con un práctico lavadero propio y un excelente espacio exterior conformado por un solarium equipado con parrilla, perfecto para disfrutar de los días soleados.",
+    imagen: "/img/foto_casa_webp/casa-silvia-1.webp",
     galeria: [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=800"
+      "/img/foto_casa_webp/casa-silvia-1.webp",
+      "/img/foto_casa_webp/casa-silvia-3.webp",
+      "/img/foto_casa_webp/casa-silvia-5.webp",
+      "/img/foto_casa_webp/casa-silvia-6.webp",
+      "/img/foto_casa_webp/casa-silvia-7.webp",
+      "/img/foto_casa_webp/casa-silvia-8.webp",
+      "/img/foto_casa_webp/casa-silvia-9.webp",
+      "/img/foto_casa_webp/casa-silvia-10.webp",
+      "/img/foto_casa_webp/casa-silvia-11.webp",
+      "/img/foto_casa_webp/casa-silvia-12.webp",
     ],
-    detalles: ["Piscina climatizada integrada", "Cocina gourmet", "Asador exterior", "Tres dormitorios suites", "Hogar a leña gigante", "Estacionamiento cubierto"],
+    detalles: [
+      "1 planta",
+      "Solarium exclusivo",
+      "Lavadero propio",
+      "Parrilla exterior"
+    ],
     distintivo: [
-      "Piscina climatizada in-out",
-      "Cocina de nivel gourmet",
-      "Gran chimenea de piedra"
+      "Solarium exclusivo con parrilla",
+      "Lavadero propio integrado",
+      "2 baños para mayor comodidad"
     ],
     comodidades: [
-      "Piscina climatizada",
-      "Cocina semi-industrial",
-      "Chimenea gigante",
-      "Asador criollo exterior",
-      "Tres baños en suite",
-      "Calefacción centralizada",
-      "Smart TV 65''",
-      "Wi-Fi fibra óptica",
-      "Sommiers King premium",
-      "Sábanas de 400 hilos",
-      "Cafetera superautomática"
+      "Alarma",
+      "Lavadero",
+      "Wi-Fi",
+      "Parrilla exterior",
+      "Ropa de cama",
+      "Solarium"
     ],
-    dormir: "2 camas king · 2 camas individuales"
-  }
+    dormir: "2 Dormitorios en total. (Plazas adaptables para 5/6 huéspedes)."
+  },
+
 ];
 
-export const testimonios = [
-  {
-    id: 1,
-    autor: "Laura & Martín",
-    cabana: "Aromo",
-    comentario: "Sotobosque superó todas nuestras expectativas. El silencio es absoluto y el aroma a leña con los tilos de fondo te desconecta de la rutina de inmediato. Un lugar del que cuesta volverse."
-  },
-  {
-    id: 2,
-    autor: "Familia Rodríguez",
-    cabana: "Roble",
-    comentario: "Los ventanales de doble altura en la cabaña Roble te hacen sentir que estás durmiendo literalmente al aire libre, pero con el confort y el abrigo del hogar a leña. Excelente servicio y detalles de calidad."
-  }
-];
 
 export const momentosFotos = [
-  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=600",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=600",
-  "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=600",
-  "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=600",
-  "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?auto=format&fit=crop&q=80&w=600",
-  "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&q=80&w=600"
+  "/img/Fotos_bosque/foto_bosque_1.webp",
+  // "/img/Fotos_bosque/foto_bosque_2.webp",
+  // "/img/Fotos_bosque/foto_bosque_3.webp",
+  // "/img/Fotos_bosque/foto_bosque_4.webp", 
+  // "/img/Fotos_bosque/foto_bosque_5.webp",
+  "/img/Fotos_bosque/foto_bosque_6.webp",
+  // "/img/Fotos_bosque/foto_bosque_7.webp",
+  "/img/Fotos_bosque/foto_bosque_8.webp",
+  // "/img/Fotos_bosque/foto_bosque_9.webp",
+  // "/img/Fotos_bosque/foto_bosque_10.webp",
+  "/img/Fotos_bosque/foto_bosque_11.webp",
+  "/img/Fotos_bosque/foto_bosque_12.webp",
+  "/img/Fotos_bosque/foto_bosque_13.webp",
+  "/img/Fotos_bosque/foto_bosque_14.webp",
+
+  // ...agrega todas las que necesites
 ];

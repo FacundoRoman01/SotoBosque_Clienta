@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240" font-family="&#39;Cormorant Garamond&#39;, &#39;Cormorant&#39;, Georgia, serif">
+  <title>Cabañas Sylviane — Lockup horizontal</title>
+  <desc>Logo principal: monograma + wordmark + tagline. Requiere Cormorant Garamond cargado para que el texto renderice correctamente.</desc>
+
+  
+  <g transform="translate(0 0)">
+    <circle cx="120" cy="120" r="106" fill="none" stroke="#4a5c3f" stroke-width="1.1" opacity="0.32"></circle>
+    <path d="M 162 82 C 162 64, 140 56, 116 58 C 86 60, 74 80, 80 96 C 86 112, 108 116, 132 124 C 158 132, 168 152, 158 168 C 148 184, 118 186, 96 178 C 82 173, 76 164, 78 156" fill="none" stroke="#4a5c3f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <g>
+      <path d="M 162 82 C 170 76, 176 70, 182 66" fill="none" stroke="#4a5c3f" stroke-width="2.2" stroke-linecap="round"></path>
+      <path d="M 182 66 C 192 58, 204 60, 206 70 C 200 78, 188 78, 182 72 C 180 70, 180 68, 182 66 Z" fill="#4a5c3f"></path>
+    </g>
+    <g>
+      <path d="M 78 156 C 70 164, 64 170, 58 174" fill="none" stroke="#4a5c3f" stroke-width="2.2" stroke-linecap="round"></path>
+      <path d="M 58 174 C 48 180, 36 178, 34 170 C 40 162, 52 162, 58 168 C 60 170, 60 172, 58 174 Z" fill="#4a5c3f"></path>
+    </g>
+  </g>
+
+  
+  <line x1="270" y1="60" x2="270" y2="180" stroke="#4a5c3f" stroke-width="0.8" opacity="0.32"></line>
+
+  
+  <g transform="translate(296 0)">
+    <text x="0" y="130" fill="#2a3024" font-style="italic" font-weight="400" font-size="78" letter-spacing="-1.5">Sylviane</text>
+    <text x="2" y="170" fill="#4a5c3f" font-family="&#39;Inter&#39;, system-ui, sans-serif" font-weight="600" font-size="13" letter-spacing="4.8">CABAÑAS · MAR DEL PLATA</text>
+  </g>
+</svg>

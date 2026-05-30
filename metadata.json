@@ -1,6 +1,6 @@
 {
-  "name": "Sotobosque",
-  "description": "Landing page premium y minimalista para el complejo de cabañas Sotobosque en Sierra de los Padres.",
+  "name": "Cabañas Sylviane",
+  "description": "Landing page premium y minimalista para el complejo de cabañas Cabañas Sylviane en Guaraníes entre Margaritas y Yanquetruz 100, Bosque Peralta Ramos, Mar del Plata.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

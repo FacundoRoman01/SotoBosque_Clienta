@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface Testimonial {
@@ -8,166 +9,184 @@ interface Testimonial {
   origen: string;
   duracion: string;
   fecha: string;
-  imagen: string;
   rating: number;
 }
 
 const testimonialsList: Testimonial[] = [
   {
     id: 1,
-    autor: "Lucía & Martín",
-    comentario: '"Nunca habíamos descansado tanto en tan pocos días. El ofuro al atardecer, el silencio del bosque, los desayunos en la galería. Volvemos en invierno sí o sí."',
-    origen: "BUENOS AIRES",
-    duracion: "3 NOCHES EN AROMO",
-    fecha: "ABRIL 2026",
-    imagen: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
+    autor: "Tais",
+    comentario: "La estadía fue muy linda, Sil estuvo muy atenta a todo. Es una cabaña para volver.",
+    origen: "SAN MARTÍN, ARGENTINA",
+    duracion: "ESTADÍA RECIENTE",
+    fecha: "HACE 3 SEMANAS",
     rating: 5,
   },
   {
     id: 2,
-    autor: "Gonzalo & Sofía",
-    comentario: '"Un refugio de paz inexplicable. Despertar y ver las copas de los árboles meciéndose desde el ventanal doble de Roble es una experiencia mágica. Volveremos siempre y recomendaremos sin dudar."',
-    origen: "MONTEVIDEO",
-    duracion: "4 NOCHES EN ROBLE",
-    fecha: "MAYO 2026",
-    imagen: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200",
+    autor: "Sandra",
+    comentario: "Un hermoso lugar con una vista maravillosa, se descansa y disfruta ..!!! Súper recomendable y la anfitriona muy amable y siempre atenta. Gracias SIL hasta la próxima seguro volveré ..",
+    origen: "ARGENTINA",
+    duracion: "ESTADÍA EN CABAÑA",
+    fecha: "HACE 2 MESES",
     rating: 5,
   },
   {
     id: 3,
-    autor: "Clara & Tomás",
-    comentario: '"El diseño de las cabañas es impecable, rústico pero sofisticado. La tina de agua caliente bajo el cielo estrellado de la sierra es sin dudas lo mejor. Nos sentimos realmente mimados."',
-    origen: "BARILOCHE",
-    duracion: "2 NOCHES EN COIHUE",
-    fecha: "MARZO 2026",
-    imagen: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=1200",
+    autor: "Brenda Berenice",
+    comentario: "Hermoso lugar. Rodeado de un bosque muy lindo. Silvia muy agradable y la verdad que pudimos reservar de un momento a otro así que super recomendable.",
+    origen: "SANTA ROSA, ARGENTINA",
+    duracion: "ESCAPADA",
+    fecha: "HACE 7 MESES",
     rating: 5,
+  },
+  {
+    id: 4,
+    autor: "Ricardo",
+    comentario: "La cabaña es hermosa y tanto Sil como su esposo y su hijo están atentos a cualquier necesidad de los huéspedes.",
+    origen: "BUENOS AIRES, ARGENTINA",
+    duracion: "VACACIONES",
+    fecha: "HACE 7 MESES",
+    rating: 4,
   },
 ];
 
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  const handleDotClick = (index: number) => {
-    setActiveIndex(index);
+  // Smooth responsive sizing
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCount(3);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const maxIndex = testimonialsList.length - visibleCount;
+
+  // Make sure activeIndex is always bounded when resizing screens
+  useEffect(() => {
+    if (activeIndex > maxIndex) {
+      setActiveIndex(Math.max(0, maxIndex));
+    }
+  }, [visibleCount, activeIndex, maxIndex]);
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
-  const current = testimonialsList[activeIndex];
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+  };
 
   return (
-    <section id="testimonios" className="bg-[#F7F4F0] py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
-      {/* Subtle details */}
-      <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[#435843]/5 filter blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section 
+      id="testimonios" 
+      className="bg-[#FAF8F5] text-[#2C3C2C] py-20 sm:py-28 px-6 md:px-12 relative overflow-hidden border-t border-[#435843]/10"
+    >
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* Header content matching the requested editorial concept */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-16 pb-4 border-b border-[#435843]/15">
+          <div className="max-w-2xl">
+            <span className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#CBBF9F] uppercase font-bold block mb-2">
+              06 · LA EXPERIENCIA en Cabañas Sylviane
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#2C3C2C] font-light tracking-tight leading-tight">
+              Testimonios de <span className="text-italic-serif italic text-[#CBBF9F] font-normal">nuestros huéspedes</span>
+            </h2>
+          </div>
           
-          {/* Left Column - Image with overladen badge matching mockup exactly */}
-          <div className="lg:col-span-5 relative w-full aspect-[4/5] sm:aspect-[4/5] rounded-[28px] sm:rounded-[40px] overflow-hidden shadow-lg border border-[#435843]/10">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={current.id}
-                src={current.imagen}
-                alt={`Testimonio de ${current.autor}`}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.7 }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </AnimatePresence>
-
-            {/* Subtle premium dark vignette bottom gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-
-            {/* Overlaid Badge Bottom Left - Solid Elegant and Beautiful */}
-            <div className="absolute bottom-6 left-6 right-6 bg-[#323D32]/95 backdrop-blur-sm px-6 py-4 rounded-[20px] border border-white/10 shadow-lg text-[#F7F4F0]">
-              <div className="flex flex-col gap-1.5 select-none">
-                <span className="font-sans text-[10px] md:text-xs tracking-[0.2em] font-semibold text-[#FAF8F5]/85 uppercase">
-                  RESEÑA DESTACADA · {activeIndex + 1}/{testimonialsList.length}
-                </span>
-                
-                {/* 5 Filled Golden Stars */}
-                <div className="flex gap-1 text-yellow-400 mt-1">
-                  {[...Array(current.rating)].map((_, i) => (
-                    <span key={i} className="text-sm md:text-base leading-none">★</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-3 self-end">
+            <button
+              onClick={handlePrev}
+              className="p-3 text-[#435843] hover:text-white bg-white hover:bg-[#2C3C2C] border border-[#435843]/10 rounded-full transition-all duration-300 focus:outline-none shadow-sm cursor-pointer"
+              aria-label="Carrusel anterior"
+            >
+              <ChevronLeft className="w-5 h-5 pointer-events-none" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="p-3 text-[#435843] hover:text-white bg-white hover:bg-[#2C3C2C] border border-[#435843]/10 rounded-full transition-all duration-300 focus:outline-none shadow-sm cursor-pointer"
+              aria-label="Siguiente carrusel"
+            >
+              <ChevronRight className="w-5 h-5 pointer-events-none" />
+            </button>
           </div>
-
-          {/* Right Column - Big Quote and details */}
-          <div className="lg:col-span-7 flex flex-col justify-between h-full py-2 min-h-[380px] lg:min-h-[460px]">
-            <div>
-              {/* Steps/Section label */}
-              <p className="font-sans text-[10px] sm:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
-                05 · LO QUE NOS DEJAN
-              </p>
-
-              {/* Huge Elegant Serif Quote */}
-              <div className="mt-8 lg:mt-10 min-h-[160px] sm:min-h-[180px] flex items-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={current.id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="w-full"
-                  >
-                    <p className="font-serif italic font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.3] text-[#435843]/90">
-                      {current.comentario}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Elegant Thin Rule Divider */}
-              <div className="w-full h-[1px] bg-[#435843]/15 my-8 lg:my-10" />
-
-              {/* Reviewer Details Author */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.4 }}
-                  className="flex flex-col gap-1.5"
-                >
-                  <h4 className="font-serif text-lg sm:text-xl font-medium text-[#435843]">
-                    {current.autor}
-                  </h4>
-                  <p className="font-sans text-[10px] sm:text-xs tracking-[0.18em] text-[#435843]/50 font-semibold uppercase">
-                    {current.origen} · {current.duracion} · {current.fecha}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Slider Indicator with capsule and rounded dots */}
-            <div className="flex items-center gap-2.5 mt-8 lg:mt-12">
-              {testimonialsList.map((_, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleDotClick(index)}
-                    className={`cursor-pointer h-2 rounded-full transition-all duration-300 ${
-                      isActive 
-                        ? "bg-[#435843] w-9" 
-                        : "bg-[#435843]/20 hover:bg-[#435843]/45 w-2"
-                    }`}
-                    aria-label={`Ir al testimonio ${index + 1}`}
-                  />
-                );
-              })}
-            </div>
-
-          </div>
-
         </div>
+
+        {/* Carousel slide viewport wrapper */}
+        <div className="overflow-visible lg:overflow-hidden -mx-4 px-4 py-2">
+          <div className="relative">
+            <motion.div
+              className="flex"
+              animate={{ x: `-${activeIndex * (100 / visibleCount)}%` }}
+              transition={{ type: "spring", stiffness: 180, damping: 25 }}
+            >
+              {testimonialsList.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex-none px-3 sm:px-4"
+                  style={{ width: `${100 / visibleCount}%` }}
+                >
+                  {/* Cards component exactly with the requested elegant look */}
+                  <div className="bg-white rounded-[24px] border border-[#435843]/8 p-7 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full min-h-[300px] hover:border-[#CBBF9F]/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+                    <div>
+                      {/* Dynamic stars based on real rating */}
+                      <div className="flex gap-1 text-[#CBBF9F] mb-6 select-none">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-3.5 h-3.5 ${i < item.rating ? "fill-current" : "fill-transparent border-[#CBBF9F] opacity-40"}`} 
+                          />
+                        ))}
+                      </div>
+
+                      {/* Italic font quote style */}
+                      <p className="font-serif italic text-base sm:text-lg leading-relaxed text-[#435843]/90 font-light">
+                        "{item.comentario}"
+                      </p>
+                    </div>
+
+                    {/* Divider and clean bio credentials row */}
+                    <div className="mt-8 pt-6 border-t border-[#435843]/10">
+                      <h4 className="font-sans text-xs font-bold tracking-wider text-[#2C3C2C] uppercase">
+                        {item.autor}
+                      </h4>
+                      <p className="font-sans text-[10px] text-[#435843]/60 tracking-wide mt-1">
+                        {item.origen} · <span className="italic text-[#CBBF9F] font-semibold">{item.duracion}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Smart page indicators navigation */}
+        <div className="flex justify-center items-center gap-2 mt-12">
+          {Array.from({ length: Math.max(1, testimonialsList.length - visibleCount + 1) }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveIndex(idx)}
+              className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none cursor-pointer ${
+                idx === activeIndex ? "bg-[#CBBF9F] w-6" : "bg-[#435843]/25 hover:bg-[#435843]/45 w-1.5"
+              }`}
+              aria-label={`Mostrar grupo ${idx + 1}`}
+            />
+          ))}
+        </div>
+
       </div>
     </section>
   );

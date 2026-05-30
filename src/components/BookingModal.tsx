@@ -143,7 +143,7 @@ export default function BookingModal({ isOpen, onClose, onSuccessBooking }: Book
                   >
                     {cabanasData.map((cabin) => (
                       <option key={cabin.id} value={cabin.id}>
-                        Cabaña {cabin.nombre} ({cabin.precio}/noche)
+                        {/* Cabaña {cabin.nombre} ({cabin.precio}/noche) */}
                       </option>
                     ))}
                   </select>

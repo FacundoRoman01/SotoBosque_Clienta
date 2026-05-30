@@ -11,10 +11,11 @@ import ServicesSection from "../components/ServicesSection";
 import HowToReachSection from "../components/HowToReachSection";
 import ForestPeraltaSection from "../components/ForestPeraltaSection";
 import BookingCallToAction from "../components/BookingCallToAction";
-import { Cabin, testimonios, momentosFotos } from "../data/mockData";
+import { Cabin, momentosFotos } from "../data/mockData";
 import Footer from "../components/Footer";
 import TestimonialsSection from "../components/TestimonialsSection";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import Momentos from "../components/Momentos";
 
 export default function Home() {
   const [selectedCabin, setSelectedCabin] = useState<Cabin | null>(null);
@@ -52,55 +53,12 @@ export default function Home() {
       <ForestPeraltaSection />
 
       {/* 03 · MOMENTOS SECTION (To ensure full website logic for Menu links) */}
-      <section id="momentos" className="text-[#435843] py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 rounded-full  blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          
-          <div className="max-w-2xl">
-            <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/70 uppercase font-semibold">
-              03 · MOMENTOS
-            </p>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#435843] font-light mt-4">
-              La calma del <span className="text-italic-serif italic">silencio.</span>
-            </h2>
-            <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/80 mt-4 font-light leading-relaxed max-w-xl">
-              Imágenes del bosque que rodea a Sotobosque. Un susurro de las hojas de tilo, el crujir de las piñas bajo el calzado y la bruma matinal que abraza los troncos.
-            </p>
-          </div>
-
-          {/* Grid Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {momentosFotos.map((foto, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative aspect-[4/3] rounded-2xl md:rounded-[24px] overflow-hidden bg-[#2C3C2C] shadow"
-              >
-                <img
-                  src={foto}
-                  alt={`Momento ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-all duration-300" />
-              </motion.div>
-            ))}
-          </div>
-
-         
-
-         
-
-        </div>
-        
-      </section>
-
+      
+      <Momentos momentosFotos={momentosFotos} />
       
 
       {/* 05 · SERVICIOS Y COMODIDADES */}
-      <ServicesSection />
+      {/* <ServicesSection /> */}
 
     <TestimonialsSection />
       
@@ -115,7 +73,7 @@ export default function Home() {
      <Footer />
 
       {/* --- NOTIFICATIONS GLASS TOAST FOR BOOKING SUCCESS --- */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {toastMessage && (
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -138,7 +96,7 @@ export default function Home() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Detailed cabin modal info */}
       <CabinDetailsModal
@@ -147,12 +105,15 @@ export default function Home() {
         onSuccessBooking={handleSuccessBooking}
       />
 
+
+      
+
       {/* Sticky General Header CTA button overlay Modal */}
-      <BookingModal
+      {/* <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         onSuccessBooking={handleSuccessBooking}
-      />
+      /> */}
       <FloatingWhatsApp />
     </div>
   );

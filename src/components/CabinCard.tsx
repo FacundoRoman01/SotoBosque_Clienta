@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { motion } from "motion/react";
-import { Users, Maximize, BedDouble, ChevronRight, Sparkles } from "lucide-react";
+import { motion, } from "motion/react";
+// import { Users, Maximize, BedDouble, ChevronRight, Sparkles } from "lucide-react";
 import { Cabin } from "../data/mockData";
 
 interface CabinCardProps {
   cabin: Cabin;
   onOpenDetails: (cabin: Cabin) => void;
 }
+
+
+//hacer mas grandes las fotos con un modal
 
 export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,10 +20,9 @@ export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 60, damping: 15 },
+      transition: { type: "spring" as const, stiffness: 60, damping: 15 },
     },
   };
-
   const formattedNum = cabin.numero.replace(/[^0-9]/g, "");
 
   return (
@@ -31,7 +33,10 @@ export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
       className="bg-[#FAF8F5] rounded-[32px] overflow-hidden border border-[#435843]/10 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1.5 flex flex-col justify-between group h-full"
     >
       {/* Top Image & Price Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-200">
+      <div 
+        className="relative aspect-[4/3] w-full overflow-hidden bg-gray-200 cursor-pointer" 
+        onClick={() => onOpenDetails(cabin)}
+      >
         <img
           src={cabin.imagen}
           alt={cabin.nombre}
@@ -56,9 +61,9 @@ export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
         </div>
 
         {/* Price Tag Overlay - Exactly as in the mockup bottom-right */}
-        <div className="absolute bottom-4 right-4 bg-[#1a231a]/85 backdrop-blur-sm text-[#F7F4F0] text-[10px] sm:text-xs font-sans tracking-[0.15em] font-bold px-4 py-2 rounded-xl uppercase border border-[#F7F4F0]/10 shadow-md">
+        {/* <div className="absolute bottom-4 right-4 bg-[#1a231a]/85 backdrop-blur-sm text-[#F7F4F0] text-[10px] sm:text-xs font-sans tracking-[0.15em] font-bold px-4 py-2 rounded-xl uppercase border border-[#F7F4F0]/10 shadow-md">
           DESDE {cabin.precio}
-        </div>
+        </div> */}
       </div>
 
       {/* Details Area with generous layout matching mockup perfectly */}
@@ -78,7 +83,7 @@ export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
           <div className="flex items-center text-xs sm:text-sm text-[#435843]/70 font-light tracking-wide gap-2.5 pb-6 border-b border-[#435843]/10 mt-4 mb-5">
             <span>{cabin.huespedes} huéspedes</span>
             <span className="text-[#435843]/45 select-none font-sans text-[8px] sm:text-[10px]">·</span>
-            <span>{cabin.m2} m²</span>
+            <span>{cabin.ambientes} Ambientes</span>
             <span className="text-[#435843]/45 select-none font-sans text-[8px] sm:text-[10px]">·</span>
             <span>{cabin.dormitorios} dorm.</span>
           </div>

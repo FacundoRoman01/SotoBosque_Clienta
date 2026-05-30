@@ -23,7 +23,7 @@ export default function WelcomeSection() {
 
         {/* Large quote in Serif Italic */}
         <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[46px] leading-[1.25] text-[#435843] font-light italic px-4 md:px-8">
-          "Llegar acá es como apagar una luz que estaba demasiado encendida."
+          "Que la única decisión del día sea qué silencio elegir"
         </blockquote>
 
         {/* Thick elegant spacer line */}
@@ -31,7 +31,7 @@ export default function WelcomeSection() {
 
         {/* Small descriptive text below */}
         <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/80 leading-relaxed max-w-xl font-light">
-          Cuatro cabañas únicas. Cada una con su nombre, su carácter, su historia. Un complejo pensado al detalle para para que la única decisión difícil del día sea qué hacer primero — o no hacer nada.
+         Hace más de 20 años que recibimos gente en Mar del Plata. No tenemos un solo lugar — tenemos cinco. Cada uno pensado para que llegues, dejes la mochila y te olvides de mirar la hora.
         </p>
       </motion.div>
     </section>

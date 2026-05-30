@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ChevronLeft, ChevronRight, Check, Calendar, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
 import { Cabin } from "../data/mockData";
+import ImageModal from "./ImageModal"; // <-- Importamos el nuevo componente
 
 interface CabinDetailsModalProps {
   cabin: Cabin | null;
@@ -13,6 +14,10 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
   const [activePhoto, setActivePhoto] = useState(0);
   const [showInquiryForm, setShowInquiryForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // <-- 1. Agregamos el estado para guardar la foto que vamos a ver en grande
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null); 
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,13 +58,13 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
   };
 
   // Generate WhatsApp customized message
-  const whatsappUrl = `https://wa.me/542239876543?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
     `Hola Sotobosque! Me interesa consultar disponibilidad para la Cabaña ${cabin.nombre}. ¿Tienen lugar próximamente?`
   )}`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
         {/* Backdrop background overlay */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -69,7 +74,7 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
           className="absolute inset-0 bg-[#2C3C2C]/85 backdrop-blur-md"
         />
 
-        {/* Modal Window Panel Box (High contrast Dark Green Theme Match Image) */}
+        {/* Modal Window Panel Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -81,13 +86,15 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
           <div className="overflow-y-auto w-full h-full max-h-[92vh] scrollbar-thin">
             
             {/* 1. TOP HERO CONTAINER (Image Slider) */}
-            <div className="relative aspect-[16/10] md:aspect-[16/8] w-full overflow-hidden bg-[#2C3C2C]">
+            <div className="relative aspect-[16/10] md:aspect-[16/8] w-full overflow-hidden bg-[#2C3C2C] group">
               
               {/* Image banner */}
+              {/* <-- 2. Le agregamos el evento onClick y le cambiamos el cursor para que indique que se puede hacer clic */}
               <img
                 src={cabin.galeria[activePhoto]}
                 alt={`${cabin.nombre} - Galería ${activePhoto + 1}`}
-                className="w-full h-full object-cover brightness-[0.9]"
+                onClick={() => setFullscreenImage(cabin.galeria[activePhoto])}
+                className="w-full h-full object-cover brightness-[0.9] cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Top Vignette black translucent backdrop gradient overlay */}
@@ -104,7 +111,7 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
                 className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-black/75 hover:bg-black text-white hover:scale-110 active:scale-95 duration-200 cursor-pointer border border-[#F7F4F0]/10"
                 aria-label="Cerrar modal"
               >
-                <X className="w-4 h-4 md:w-5 h-5" />
+                <X className="w-4 h-4 md:w-5 md:h-5" />
               </button>
 
               {/* Chevron arrows selectors centet-aligned */}
@@ -140,32 +147,29 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
             <div className="p-6 md:p-10 flex flex-col gap-8">
               
               {/* Cabin ID heading layout and Pricing */}
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#F7F4F0]/10 pb-6">
-                <div>
-                  <h1 className="font-serif text-4xl md:text-5xl font-light text-white tracking-wide">
-                    {cabin.nombre}
-                  </h1>
-                  <p className="font-sans text-[11px] md:text-xs tracking-[0.25em] text-[#CBBF9F] uppercase font-semibold mt-1.5">
-                    {cabin.tagline}
-                  </p>
-                </div>
-                <div className="text-left md:text-right flex flex-col gap-0.5">
-                  <span className="font-sans text-[10px] text-[#F7F4F0]/60 tracking-wider uppercase font-semibold">DESDE</span>
-                  <span className="font-serif text-2xl md:text-3xl font-light text-[#CBBF9F] italic">
-                    {cabin.precio} <span className="text-xs uppercase font-sans tracking-widest text-white/70 font-medium font-normal ml-1">/ noche</span>
-                  </span>
-                </div>
-              </div>
+<div>
+  <h1 className="font-serif text-4xl md:text-5xl font-light text-white tracking-wide">
+    {cabin.nombre}
+  </h1>
 
-              {/* 3. PERFORMANCE STATS GRID (CAPACIDAD, SUPERFICIE, DORMITORIOS, BAÑOS) */}
+  <p className="font-sans text-[11px] md:text-xs tracking-[0.25em] text-[#CBBF9F] uppercase font-semibold mt-1.5">
+    {cabin.tagline}
+  </p>
+
+  <p className="font-sans text-sm text-[#F7F4F0]/70 mt-3 flex items-center gap-2">
+    📍 {cabin.direccion}
+  </p>
+</div>
+
+              {/* 3. PERFORMANCE STATS GRID */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border border-[#F7F4F0]/15 rounded-xl p-5 bg-[#252F25]/40 text-[#F7F4F0]">
                 <div className="flex flex-col gap-1">
                   <span className="font-sans text-[9px] sm:text-[10px] uppercase font-bold text-[#CBBF9F] tracking-widest">Capacidad</span>
                   <span className="font-serif text-lg text-white font-medium italic mt-0.5">{cabin.huespedes} huéspedes</span>
                 </div>
                 <div className="flex flex-col gap-1 border-l-0 md:border-l border-[#F7F4F0]/15 md:pl-5">
-                  <span className="font-sans text-[9px] sm:text-[10px] uppercase font-bold text-[#CBBF9F] tracking-widest">Superficie</span>
-                  <span className="font-serif text-lg text-white font-medium italic mt-0.5">{cabin.m2} m²</span>
+                  <span className="font-sans text-[9px] sm:text-[10px] uppercase font-bold text-[#CBBF9F] tracking-widest">Ambientes</span>
+                  <span className="font-serif text-lg text-white font-medium italic mt-0.5">{cabin.ambientes}</span>
                 </div>
                 <div className="flex flex-col gap-1 border-l-0 md:border-l border-[#F7F4F0]/15 md:pl-5">
                   <span className="font-sans text-[9px] sm:text-[10px] uppercase font-bold text-[#CBBF9F] tracking-widest">Dormitorios</span>
@@ -259,12 +263,12 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
                   </a>
 
                   {/* Consultation form toggler */}
-                  <button
+                  {/* <button
                     onClick={() => setShowInquiryForm(!showInquiryForm)}
                     className="w-full sm:w-auto cursor-pointer px-8 py-3.5 bg-[#CBBF9F] hover:bg-[#D1C4A6]/90 text-[#1A231A] rounded-xl text-xs font-sans tracking-widest font-bold uppercase transition-all duration-300 transform active:scale-95 shadow-md flex items-center justify-center gap-2"
                   >
                     CONSULTAR DISPONIBILIDAD
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* SLIDE-DOWN BOOKING CONSULTATION FORM */}
@@ -364,6 +368,13 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
             </div>
           </div>
         </motion.div>
+        
+        {/* <-- 3. Renderizamos el modal de la imagen a pantalla completa al final de todo */}
+        <ImageModal
+          imageUrl={fullscreenImage}
+          onClose={() => setFullscreenImage(null)}
+        />
+        
       </div>
     </AnimatePresence>
   );

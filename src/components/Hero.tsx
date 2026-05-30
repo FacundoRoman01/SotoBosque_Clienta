@@ -54,38 +54,37 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           >
             <motion.p
               variants={itemVariants}
-              className="font-sans text-[10px] sm:text-xs tracking-[0.25em] font-semibold text-[#F7F4F0]/75 uppercase"
+              className="font-sans text-[7px] sm:text-xs tracking-[0.25em] font-semibold text-[#F7F4F0]/75 uppercase"
             >
               CABAÑAS PREMIUM · MAR DEL PLATA
             </motion.p>
 
             <motion.h1
               variants={itemVariants}
-              className="font-serif text-[45px] sm:text-[60px] md:text-[75px] lg:text-[80px] leading-[1.08] tracking-tight text-white font-light"
+              className="font-serif text-[40px] sm:text-[60px] md:text-[70px] lg:text-[75px] leading-[1.08] tracking-tight text-white font-light"
             >
-              Sotobosque <br />
+              Cabañas Sylviane <br />
               te recibe <br />
-              entre <span className="text-italic-serif italic font-light text-[#CBBF9F] tracking-wide">tilos.</span>
+              donde el silencio  <span className="text-italic-serif italic font-light text-[#CBBF9F] tracking-wide">empieza.</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="font-sans text-xs sm:text-sm md:text-base leading-relaxed text-[#F7F4F0]/85 font-light max-w-md"
             >
-              Un complejo de cuatro cabañas escondido en el bosque de Sierra de los Padres.
-              Para los que vienen a desaparecer un rato.
+              Cinco lugares para quedarse en Mar del Plata. Tres cabañas escondidas en el bosque, una casa en la sierra y un refugio cerca del mar.
             </motion.p>
 
             <motion.div
               variants={itemVariants}
               className="flex flex-wrap items-center gap-4 pt-2"
             >
-              <button
+              {/* <button
                 onClick={onOpenBooking}
                 className="cursor-pointer px-8 py-3.5 bg-[#FAF8F5] hover:bg-white text-[#435843] hover:scale-105 active:scale-95 rounded-full font-sans text-xs tracking-[0.18em] font-bold uppercase transition-all duration-300 shadow-md"
               >
                 RESERVAR AHORA
-              </button>
+              </button> */}
 
               <button
                 onClick={handleVerCabanas}
@@ -96,14 +95,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </motion.div>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="grid grid-cols-3 gap-4 sm:gap-6 border-t border-[#F7F4F0]/15 pt-8 mt-12 lg:mt-6"
           >
             <div>
-              <p className="font-serif text-2xl sm:text-4xl font-light text-[#F7F4F0]"> {/* <-- Ajuste: text-2xl en mobile para que no rompa */}
+              <p className="font-serif text-2xl sm:text-4xl font-light text-[#F7F4F0]">
                 4.97<span className="text-[10px] sm:text-sm text-[#F7F4F0]/65 font-sans ml-0.5">/5</span>
               </p>
               <p className="font-sans text-[8px] sm:text-[10px] tracking-[0.18em] text-[#F7F4F0]/60 uppercase font-medium mt-1.5">
@@ -126,14 +125,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 AL MAR
               </p>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Right column - (Igual) */}
         <div className="lg:col-span-6 relative min-h-[450px] lg:min-h-0 w-full overflow-hidden self-stretch flex items-center justify-center mt-8 lg:mt-0">
           <img
             src="/img/foto_cabana_1_webP/imagen-silvia-1.webp"
-            alt="Cabina Sotobosque"
+            alt="Cabina Cabañas Sylviane"
             className="absolute inset-0 w-full h-full object-cover scale-100 transition-transform duration-[6000ms] hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#435843] via-[#435843]/50 to-transparent lg:block hidden z-10 pointer-events-none" />

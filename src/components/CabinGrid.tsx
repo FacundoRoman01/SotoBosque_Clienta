@@ -27,11 +27,11 @@ export default function CabinGrid({ onOpenDetails }: CabinGridProps) {
         {/* Title Group - Styled perfectly according to Image 3 */}
         <div className="max-w-3xl flex flex-col gap-4 text-left">
           <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
-            02 · LAS CUATRO CABAÑAS
+            02 · LOS ALOJAMIENTOS
           </p>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#435843] font-light leading-tight">
-            Cada una con su{" "}
-            <span className="text-italic-serif italic">propio nombre.</span>
+            Cinco lugares,{" "}
+            <span className="text-italic-serif italic">una sola idea.</span>
           </h2>
           <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/85 max-w-xl font-light leading-relaxed">
             Diseñadas para distintos modos de descansar. Tocá cada tarjeta para ver fotos, comodidades y disponibilidad.

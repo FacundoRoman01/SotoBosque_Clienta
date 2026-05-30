@@ -8,12 +8,24 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Columns definitions */}
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2">
-                <Trees className="w-6 h-6 text-[#F7F4F0]" />
-                <span className="font-serif text-xl tracking-wide font-medium text-[#F7F4F0]">
-                  Sotobosque
-                </span>
-              </div>
+              {/* Logo */}
+              <a
+                href="#"
+                className="flex items-center gap-2 md:gap-3.5 group transition-opacity hover:opacity-90"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                <img 
+                  src="/img/logo/logo-horizontal_sylvina.svg" 
+                  alt="Logo de Cabañas Sylviane" 
+                  className="h-10 md:h-12 w-auto transition-all duration-300 brightness-0 invert"
+                />
+                {/* <span className="font-serif text-lg md:text-2xl tracking-wide font-medium text-white transition-colors duration-300">
+                  Cabañas Sylviane
+                </span> */}
+              </a>
               <p className="font-sans text-xs font-light leading-relaxed text-[#F7F4F0]/70">
                 La naturaleza te mima, el bosque te hospeda. Cabañas de lujo sustentables rodeadas de naturaleza virgen.
               </p>
@@ -24,12 +36,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-3 font-sans text-xs font-light text-[#F7F4F0]/75">
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#F7F4F0]/60" />
-                  +54 223 987 6543
+                  2235 75-5054
                 </li>
-                <li className="flex items-center gap-2">
+                {/* <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#F7F4F0]/60" />
                   reservas@sotobosque.com
-                </li>
+                </li> */}
                 <li className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-[#F7F4F0]/60" />
                   Los Tilos s/n, Sierra de los Padres
@@ -66,9 +78,9 @@ const Footer = () => {
           </div>
 
           <div className="border-t border-[#F7F4F0]/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-[#F7F4F0]/50">
-            <p>Sotobosque Cabañas © 2026. Todos los derechos reservados.</p>
+            <p>Cabañas Sylviane Cabañas © 2026. Todos los derechos reservados.</p>
             <p className="flex items-center gap-1.5 mt-2 sm:mt-0">
-              Desarrollado con pasión para los amantes de la montaña y el mar.
+              Desarrollado por ASDASDSAD.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ export default function FloatingWhatsApp() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappUrl = `https://wa.me/542239876543?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
     "Hola Sotobosque! Quería realizar una consulta sobre disponibilidad para hospedarse en el complejo."
   )}`;
 
