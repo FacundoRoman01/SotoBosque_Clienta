@@ -25,6 +25,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   const menuItems = [
     { label: "BIENVENIDA", href: "#bienvenida" },
     { label: "LOS ALOJAMIENTOS", href: "#cabanas" },
+     { label: "NOSOTROS", href: "#nosotros" },
     { label: "MOMENTOS", href: "#momentos" },
     { label: "UBICACIÓN", href: "#ubicacion" },
   ];

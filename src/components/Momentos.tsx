@@ -42,7 +42,7 @@ export const Momentos: React.FC<MomentosProps> = ({ momentosFotos }) => {
             La calma del <span className="text-italic-serif italic">silencio.</span>
           </h2>
           <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/80 mt-4 font-light leading-relaxed max-w-xl">
-            Imágenes del bosque que rodea a Cabañas Sylviane. Un susurro de las hojas de tilo, el crujir de las piñas bajo el calzado y la bruma matinal que abraza los troncos.
+            Coleccioná recuerdos de tu estadía. El contraste de los árboles, las caminatas sin mirar el reloj y esos pequeños detalles visuales que hacen que siempre quieras volver.
           </p>
         </div>
 

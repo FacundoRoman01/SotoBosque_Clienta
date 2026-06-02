@@ -38,28 +38,10 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
     setActivePhoto((prev) => (prev === cabin.galeria.length - 1 ? 0 : prev + 1));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.dates) {
-      alert("Por favor complete todos los campos requeridos.");
-      return;
-    }
-
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowInquiryForm(false);
-      onSuccessBooking(
-        `¡Gracias, ${formData.name}! Tu solicitud de reserva para la Cabaña ${cabin.nombre} del ${formData.dates} fue recibida. Te contactaremos vía ${formData.email} en los próximos 15 minutos.`
-      );
-      // Reset
-      setFormData({ name: "", email: "", phone: "", dates: "", guests: "2 huéspedes" });
-    }, 1500);
-  };
-
+  
   // Generate WhatsApp customized message
   const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
-    `Hola Sotobosque! Me interesa consultar disponibilidad para la Cabaña ${cabin.nombre}. ¿Tienen lugar próximamente?`
+    `Hola cabañas Sylviane! Me interesa consultar disponibilidad para la Cabaña ${cabin.nombre}. ¿Tienen lugar próximamente?`
   )}`;
 
   return (
@@ -237,6 +219,30 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
                 </div>
               </div>
 
+              {/* 5.5 "UBICACIÓN" MAP SECTION (NUEVO) */}
+              <div className="flex flex-col gap-4 mt-2">
+                <p className="font-sans text-[10px] tracking-[0.25em] text-[#CBBF9F] uppercase font-bold">
+                  UBICACIÓN EXACTA
+                </p>
+                <div className="border-t border-[#F7F4F0]/15 pt-4">
+                  {/* Este contenedor controla el tamaño y diseño del mapa */}
+                  <div className="w-full h-[250px] md:h-[300px] rounded-xl overflow-hidden border border-[#F7F4F0]/20 bg-[#252F25]">
+                    {cabin.mapaIframe ? (
+                      <div 
+                        className="w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:border-none grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                        dangerouslySetInnerHTML={{ __html: cabin.mapaIframe }} 
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-[#F7F4F0]/50 text-sm font-sans italic">
+                        Mapa no disponible
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              
+              {/* 6. BOOKING PROMPT ACTION CONTAINER "Stay with us?" ... (A CONTINUACIÓN EN TU CÓDIGO) */}
+
               {/* 6. BOOKING PROMPT ACTION CONTAINER "Stay with us?" */}
               <div className="bg-[#212C21] border border-[#F7F4F0]/20 rounded-2xl p-6 md:p-8 mt-4">
                 <div className="flex flex-col gap-1 text-center md:text-left">
@@ -272,96 +278,7 @@ export default function CabinDetailsModal({ cabin, onClose, onSuccessBooking }: 
                 </div>
 
                 {/* SLIDE-DOWN BOOKING CONSULTATION FORM */}
-                <AnimatePresence>
-                  {showInquiryForm && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="overflow-hidden mt-8 border-t border-[#F7F4F0]/10 pt-6"
-                    >
-                      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div className="flex flex-col gap-1">
-                            <label className="font-sans text-[10px] font-bold tracking-wider text-white uppercase">
-                              Nombre Completo *
-                            </label>
-                            <input
-                              type="text"
-                              required
-                              placeholder="Ej. Martín Soler"
-                              value={formData.name}
-                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                              className="w-full px-4 py-2.5 bg-[#1A231A] border border-[#F7F4F0]/20 focus:border-[#CBBF9F] rounded-xl text-xs font-sans text-white outline-none transition-all animate-fade-in"
-                            />
-                          </div>
-
-                          <div className="flex flex-col gap-1">
-                            <label className="font-sans text-[10px] font-bold tracking-wider text-white uppercase">
-                              Email de Contacto *
-                            </label>
-                            <input
-                              type="email"
-                              required
-                              placeholder="Ej. martin@gmail.com"
-                              value={formData.email}
-                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                              className="w-full px-4 py-2.5 bg-[#1A231A] border border-[#F7F4F0]/20 focus:border-[#CBBF9F] rounded-xl text-xs font-sans text-white outline-none transition-all"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div className="flex flex-col gap-1">
-                            <label className="font-sans text-[10px] font-bold tracking-wider text-white uppercase">
-                              Teléfono / WhatsApp *
-                            </label>
-                            <input
-                              type="tel"
-                              required
-                              placeholder="Ej. +54 9 223 1234567"
-                              value={formData.phone}
-                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              className="w-full px-4 py-2.5 bg-[#1A231A] border border-[#F7F4F0]/20 focus:border-[#CBBF9F] rounded-xl text-xs font-sans text-white outline-none transition-all"
-                            />
-                          </div>
-
-                          <div className="flex flex-col gap-1">
-                            <label className="font-sans text-[10px] font-bold tracking-wider text-white uppercase">
-                              Fechas tentativas *
-                            </label>
-                            <input
-                              type="text"
-                              required
-                              placeholder="Ej. Del 15/Ene al 22/Ene"
-                              value={formData.dates}
-                              onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                              className="w-full px-4 py-2.5 bg-[#1A231A] border border-[#F7F4F0]/20 focus:border-[#CBBF9F] rounded-xl text-xs font-sans text-white outline-none transition-all"
-                            />
-                          </div>
-                        </div>
-
-                        <button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="cursor-pointer w-full py-3.5 bg-[#CBBF9F] hover:bg-white text-[#1A231A] font-bold font-sans text-xs tracking-widest uppercase rounded-xl transition-all duration-300 mt-2 flex items-center justify-center gap-2 shadow"
-                        >
-                          {isSubmitting ? (
-                            <svg className="animate-spin h-5 w-5 text-[#1A231A]" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                            </svg>
-                          ) : (
-                            <span className="flex items-center gap-2">
-                              ENVIAR CONSULTA
-                              <ArrowRight className="w-4 h-4" />
-                            </span>
-                          )}
-                        </button>
-                      </form>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+     
 
               </div>
 

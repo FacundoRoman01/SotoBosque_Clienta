@@ -4,9 +4,9 @@ import { MapPin, Navigation, Compass, Clock } from "lucide-react";
 
 export default function HowToReachSection() {
   const travelTimes = [
-    { title: "MAR DEL PLATA CENTRO", time: "30 min" },
-    { title: "PLAYAS DEL SUR", time: "10 min" },
-    { title: "AEROPUERTO MDP", time: "40 min" }
+    { title: "centro comercial", time: "15 min" },
+    { title: "Playas del sur y de Punta Mogotes", time: "5 min" },
+    { title: "AEROPUERTO", time: "30 min" }
   ];
 
   return (

@@ -19,7 +19,7 @@ export default function FloatingWhatsApp() {
   }, []);
 
   const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
-    "Hola Sotobosque! Quería realizar una consulta sobre disponibilidad para hospedarse en el complejo."
+    "Hola Cabañas Sylviane! Quería realizar una consulta sobre disponibilidad para hospedarse en el complejo."
   )}`;
 
   return (

@@ -1,56 +1,20 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Compass, TreePine, Bike, Binoculars, Flame, Trees, ShoppingBag, Store, Map } from "lucide-react";
+import { ShoppingBag, Store } from "lucide-react";
 
 export default function ForestPeraltaSection() {
   const activities = [
     {
       id: "01",
-      icon: <Map className="w-5 h-5 text-[#435843]" />,
-      title: "Caminatas y senderismo",
-      description: "Recorridos por los senderos de la reserva, aptos para todas las edades. Te entregamos un mapa con los trayectos sugeridos."
+      icon: <ShoppingBag className="w-5 h-5 text-[#435843]" />,
+      title: "Picnic en el bosque",
+      description: "Canasta lista para abrir en cualquier rincón verde del predio. Nuestra propuesta más romántica a pasos de tu cabaña."
     },
     {
       id: "02",
-      icon: <TreePine className="w-5 h-5 text-[#435843]" />,
-      title: "Baño de bosque",
-      description: "Una caminata lenta y consciente entre los árboles. Wellness sin clases ni horarios — sólo vos y el verde."
-    },
-    {
-      id: "03",
-      icon: <Bike className="w-5 h-5 text-[#435843]" />,
-      title: "Paseos en bicicleta",
-      description: "Los senderos del bosque admiten ciclismo. Préstamo de bicicletas disponible — pedímelas al hacer check-in."
-    },
-    {
-      id: "04",
-      icon: <Binoculars className="w-5 h-5 text-[#435843]" />,
-      title: "Observación de aves",
-      description: "La reserva alberga decenas de especies. Te dejamos binoculares y una guía simple para identificarlas."
-    },
-    {
-      id: "05",
-      icon: <Flame className="w-5 h-5 text-[#435843]" />,
-      title: "Fogón y noche de estrellas",
-      description: "Fogata al caer la tarde, cielo limpio de Sierra y todas las estrellas que olvidaste que existían."
-    },
-    {
-      id: "06",
-      icon: <Compass className="w-5 h-5 text-[#435843]" />,
-      title: "Cabalgatas",
-      description: "Recorridos a caballo por los senderos del bosque, coordinados con prestadores locales de confianza."
-    },
-    {
-      id: "07",
-      icon: <ShoppingBag className="w-5 h-5 text-[#435843]" />,
-      title: "Picnic en el bosque",
-      description: "Canasta lista para abrir en cualquier rincón verde del predio. Nuestra propuesta más romántica."
-    },
-    {
-      id: "08",
       icon: <Store className="w-5 h-5 text-[#435843]" />,
       title: "Circuito cultural",
-      description: "La Casita de Té, Color Humano y la Plaza de los Artesanos: lo que hay para descubrir caminando."
+      description: "La Casita de Té, Color Humano y la Plaza de los Artesanos: lo que hay para descubrir caminando tranquilamente."
     }
   ];
 
@@ -76,10 +40,11 @@ export default function ForestPeraltaSection() {
           transition={{ duration: 0.8 }}
           className="relative w-full aspect-[16/9] max-h-[600px] rounded-[32px] overflow-hidden shadow-lg group"
         >
-          {/* Unsplash beautiful rich high contrast forest entrance image */}
+          {/* Imagen local optimizada con Lazy Loading y Alt descriptivo para SEO */}
           <img
-            src="\img\Fotos_bosque\bosquePeralta.webp"
-            alt="Reserva Forestal Bosque Peralta Ramos"
+            src="/img/Fotos_bosque/bosquePeralta.webp"
+            alt="Entrada principal a la Reserva Forestal Bosque Peralta Ramos, rodeada de pinos y naturaleza"
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-[4000ms] group-hover:scale-105"
           />
           {/* Beautiful text tag overlay on bottom left */}
@@ -88,48 +53,46 @@ export default function ForestPeraltaSection() {
           </div>
         </motion.div>
 
-        {/* BOTTOM SECTION - OCHO MANERAS DE PERDERSE ADENTRO */}
+        {/* BOTTOM SECTION - EXPERIENCIAS PARA PERDERSE ADENTRO */}
         <div className="flex flex-col gap-12 mt-8">
           <div>
             <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
               QUÉ SE PUEDE HACER
             </p>
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#435843] font-light mt-4 leading-tight">
-              Ocho maneras de <span className="text-italic-serif italic">perderse adentro.</span>
+              Experiencias para <span className="text-italic-serif italic">perderse adentro.</span>
             </h2>
           </div>
 
-          {/* Crema colored grid with subtle green borders matches mockup exactly */}
+          {/* Clean 2-column grid meticulously styled to be balanced with only 2 items */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-[24px] border border-[#435843]/15 overflow-hidden"
+            className="grid grid-cols-1 md:grid-cols-2 rounded-[24px] border border-[#435843]/15 overflow-hidden"
           >
             {activities.map((item, index) => (
               <div
                 key={item.id}
-                className={`p-8 flex flex-col gap-4 bg-white/40 backdrop-blur-sm relative transition-all duration-300 hover:bg-white group border-b border-[#435843]/15 border-r border-[#435843]/15
-                  ${index % 2 === 1 ? "sm:border-r-0 lg:border-r" : ""}
-                  ${index >= 6 ? "border-b-0" : ""}
-                  ${index === 3 || index === 7 ? "lg:border-r-0" : ""}
+                className={`p-10 md:p-12 flex flex-col gap-5 bg-white/40 backdrop-blur-sm relative transition-all duration-300 hover:bg-white group
+                  ${index === 0 ? "border-b md:border-b-0 md:border-r border-[#435843]/15" : ""}
                 `}
               >
                 {/* Icon row & id indicator */}
                 <div className="flex items-center justify-between w-full">
-                  <div className="p-2 bg-[#435843]/15 rounded-xl text-[#435843]">
+                  <div className="p-3 bg-[#435843]/10 rounded-xl text-[#435843] group-hover:bg-[#435843]/15 transition-colors">
                     {item.icon}
                   </div>
-                  <span className="font-sans text-xs text-[#435843]/40 tracking-wider font-semibold">
+                  <span className="font-sans text-xs text-[#435843]/30 tracking-wider font-semibold">
                     {item.id}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-xl sm:text-2xl font-light text-[#435843] group-hover:text-[#2C3C2C] leading-tight mt-2">
+                <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#435843] group-hover:text-[#2C3C2C] transition-colors leading-tight mt-2">
                   {item.title}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#435843]/85 font-light leading-relaxed">
+                <p className="font-sans text-sm md:text-base text-[#435843]/85 font-light leading-relaxed">
                   {item.description}
                 </p>
               </div>

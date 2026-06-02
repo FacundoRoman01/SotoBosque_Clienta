@@ -117,7 +117,7 @@ export default function CabinCard({ cabin, onOpenDetails }: CabinCardProps) {
 
           <a
             href={`https://wa.me/542239876543?text=${encodeURIComponent(
-              `Hola Sotobosque! Quería consultar disponibilidad para la Cabaña ${cabin.nombre}.`
+              `Hola Cabañas Sylviane! Quería consultar disponibilidad para la Cabaña ${cabin.nombre}.`
             )}`}
             target="_blank"
             rel="noopener noreferrer"

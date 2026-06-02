@@ -3,9 +3,9 @@ export interface Cabin {
   numero: string;
   nombre: string;
   tagline: string;
-  huespedes: number;
+  huespedes: string;
   ambientes: number;
-  dormitorios: number;
+  dormitorios: string;
   banos: number;
   // precio: string;
   descripcion: string;
@@ -17,6 +17,7 @@ export interface Cabin {
   comodidades: string[];
   dormir: string;
   direccion : string;
+  mapaIframe: string;
 }
 
 export const cabanasData: Cabin[] = [
@@ -25,17 +26,18 @@ export const cabanasData: Cabin[] = [
     numero: "CABAÑA 1",
     nombre: "CABAÑA 1",
     tagline: "IDEAL PARA FAMILIAS CON JARDÍN Y QUINCHO",
-    huespedes: 6, // Ajustado por "5/6 personas"
-    ambientes: 2,   //ambientes dos  0 1 planta o dos plantas
-    dormitorios: 2,
+    huespedes: "5/6", // Ajustado por "5/6 personas"
+    ambientes: 3,   //ambientes dos  0 1 planta o dos plantas
+    dormitorios: "2",
     banos: 2,
-    direccion: "Guaraníes entre Las Margaritas y Yanquetruz", //plantas poner de titulo
+    direccion: "Guaraníes entre Las Margaritas y Yanquetruz", 
+    mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3140.5500359925104!2d-57.57092992410217!3d-38.080858971909905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDA0JzUxLjEiUyA1N8KwMzQnMDYuMSJX!5e0!3m2!1ses!2ses!4v1780355874154!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     // precio: "$100.000", 
     descripcion: "Cabaña distribuida en dos plantas con entrada para auto y jardín chico. Ofrece un living comedor acogedor y cocina totalmente equipada. Destaca por su cómodo quincho con parrilla, perfecto para disfrutar de asados en cualquier momento.",
     isPopular: true,
-    imagen: "/img/foto_cabana_1_webP/imagen-silvia-1.webp",
+    imagen: "/img/foto_cabana_1_webP/foto_cabanaUno_afuera.webp",
     galeria: [
-      "/img/foto_cabana_1_webP/imagen-silvia-1.webp",
+      "/img/foto_cabana_1_webP/foto_cabanaUno_afuera.webp",
       "/img/foto_cabana_1_webP/imagen-silvi-2.webp",
       "/img/foto_cabana_1_webP/cabanaUno_nuevo.webp",
       "/img/foto_cabana_1_webP/cabanaUno_fotonuevaDos.webp",
@@ -60,9 +62,12 @@ export const cabanasData: Cabin[] = [
       "Wi-Fi de alta velocidad",
       "Living comedor",
       "Ropa de cama",
-      "Quincho y Parrilla"
+      "Quincho y Parrilla",
+      "Hogar",
+      "Calefacción",
+      "Pequeño jardin"
     ],
-    dormir: "Dorm. Principal (Suite): 1 matrimonial + 1 cucheta. Dorm. Secundario: Balconeado a la escalera. Living: Sofá-cama."
+    dormir: "Camas: 1 matrimonial; 3 individuales y sofá cama doble."
   },
 
   {
@@ -70,11 +75,12 @@ export const cabanasData: Cabin[] = [
     numero: "CABAÑA 2",
     nombre: "CABAÑA 2",
     tagline: "COMODIDAD Y DISEÑO PRÁCTICO",
-    huespedes: 6,
-    ambientes: 1,
-    dormitorios: 2,
+    huespedes: "5/6",
+    ambientes: 3,
+    dormitorios: "2",
     banos: 1,
     direccion: "Guaraníes entre Las Margaritas y Yanquetruz",
+        mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3140.5500359925104!2d-57.57092992410217!3d-38.080858971909905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDA0JzUxLjEiUyA1N8KwMzQnMDYuMSJX!5e0!3m2!1ses!2ses!4v1780355874154!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     // precio: "$120.000",
     descripcion: "Cabaña práctica y acogedora en una sola planta. Cuenta con un cálido living con sofá cama. Su característica más distintiva es la parrilla incorporada a la cocina, ideal para cocinar y disfrutar en familia sin necesidad de salir al exterior.",
     imagen: "/img/foto-cabana-4/imagen_silvia_cabana4_5_.webp",
@@ -95,7 +101,7 @@ export const cabanasData: Cabin[] = [
     ],
     distintivo: [
       "Parrilla interior incorporada a la cocina",
-      "Dormitorio principal con acceso directo al baño",
+      "bañera  isla y baño en suite",
       "Distribución práctica en una planta"
     ],
     comodidades: [
@@ -106,7 +112,7 @@ export const cabanasData: Cabin[] = [
       "Ropa de cama",
       "Living"
     ],
-    dormir: "Dormitorio 1: 1 cama matrimonial (con entrada directa al baño). Dormitorio 2 (cerrado): 1 cucheta + 1 cama extra extraíble (cama nido/abajo). Living: 1 Sofá-cama doble."
+    dormir: "Dormitorios principal con cama matrimonial,  bañera  isla y baño en suite.  Dormitorio secundario: 1 cucheta + 1 cama extra extraible (cama nido/abajo) y en el living: 1 sofá-cama doble."
   },
 
   {
@@ -114,11 +120,12 @@ export const cabanasData: Cabin[] = [
     numero: "CABAÑA 3",
     nombre: "CABAÑA 3",
     tagline: "ENTRETENIMIENTO, RELAX Y GRAN CAPACIDAD",
-    huespedes: 8,
-    ambientes: 2,
-    dormitorios: 3,
+    huespedes: "7/8",
+    ambientes: 6,
+    dormitorios: "3 + 1 holl de distribución",
     banos: 2,
     direccion: "Tres Marías y Yanquetruz 100",
+    mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3140.5416179168888!2d-57.571286924102026!3d-38.08105497190984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDA0JzUxLjgiUyA1N8KwMzQnMDcuNCJX!5e0!3m2!1ses!2ses!4v1780356153876!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     // precio: "$72.000",
     descripcion: "La propiedad más completa, ideal para entretenimiento y relax. Distribuida en dos plantas, cuenta con cocina separada, amplio living comedor. En el exterior deslumbra con su pileta, solarium con cascada y parrilla. Además, ofrece un sector de juegos con pool y ping pong.",
     imagen: "/img/foto_cabaña_2_webP/silvia-cabana-II-1.webp",
@@ -164,18 +171,19 @@ export const cabanasData: Cabin[] = [
       "Cocina separada",
       "Living y Comedor"
     ],
-    dormir: "Planta Alta - Dorm. 1: 1 cama matrimonial. Dorm. 2: 2 camas matrimoniales. Estar: 2 camas individuales. Planta Baja - Dorm. 3: Habitación con bañera."
+    dormir: "Planta Alta: 1 dormitorio matrimonial. -  1 dormitorio c/2 camas individual.  -   Holl de distribución 2 camas individuales.  - planta baja: 1 dormitorio matrimonial con jacuzzi (bañera) en el dormitorio."
   },
   {
     id: "unidad",
     numero: "UNIDAD",
     nombre: "UNIDAD",
     tagline: "MODERNO CON FOGÓN EXTERIOR",
-    huespedes: 4, // La dueña indicó "Consultar", dejo 4 por el tipado numérico.
-    ambientes: 1,
-    dormitorios: 2,
+    huespedes: "4/6", // La dueña indicó "Consultar", dejo 4 por el tipado numérico.
+    ambientes: 3,
+    dormitorios: "2",
     banos: 2,
     direccion: "Boulevard Nuevo Bosque entre Las Margaritas y Diag  Gertrudis.",
+    mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3140.6230483719555!2d-57.566501924102134!3d-38.07915897191023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDA0JzQ1LjAiUyA1N8KwMzMnNTAuMSJX!5e0!3m2!1ses-419!2sar!4v1780356226358!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     // precio: "$90.000",
     descripcion: "Departamento moderno y funcional, equipado con living, comedor y cocina integrados. En el exterior ofrece un cálido fogón, un rincón perfecto para disfrutar del fuego y las noches al aire libre en buena compañía.",
     imagen: "/img/foto_cabana_3_webP/silvia-cabana-III-1.webp",
@@ -206,7 +214,7 @@ export const cabanasData: Cabin[] = [
     ],
     distintivo: [
       "Fogón exterior para reuniones",
-      "Dormitorio principal en suite",
+      "Excelente calefacción por radiadores con caldera",
       "Ambientes amplios y bien distribuidos"
     ],
     comodidades: [
@@ -217,18 +225,19 @@ export const cabanasData: Cabin[] = [
       "Ropa de cama",
       "Fogón exterior"
     ],
-    dormir: "Dormitorio 1: Suite con baño privado. Dormitorio 2: Estándar. (Contactar para detalle de distribución de camas)."
+    dormir: "Dormitorio 1 : 1 cama matrimonial, 2 individuales y sofá cama doble en el living  - dormitorio 2 : 2 camas individuales."
   },
   {
     id: "casa",
     numero: "CASA",
     nombre: "CASA",
     tagline: "CONFORT Y ESPACIO AL AIRE LIBRE",
-    huespedes: 6,
-    ambientes: 1,
-    dormitorios: 2,
+    huespedes: "5",
+    ambientes: 3,
+    dormitorios: "2",
     banos: 2,
     direccion: "Tupac Amaru entre Calchaquies y Caroyas.",
+    mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.3088552493678!2d-57.5650881!3d-38.086474100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584e0b9e4d1ff69%3A0xc0e2d4a6c17d0cdd!2sT%C3%BApac%20Amaru%20%26%20Los%20Calchaquies%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1780356291090!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     // precio: "$120.000",
     descripcion: "Casa funcional y muy cómoda, ideal para alojar hasta 6 personas. Destaca por contar con un práctico lavadero propio y un excelente espacio exterior conformado por un solarium equipado con parrilla, perfecto para disfrutar de los días soleados.",
     imagen: "/img/foto_casa_webp/casa-silvia-1.webp",
@@ -252,7 +261,7 @@ export const cabanasData: Cabin[] = [
     ],
     distintivo: [
       "Solarium exclusivo con parrilla",
-      "Lavadero propio integrado",
+      "Galeria amplia",
       "2 baños para mayor comodidad"
     ],
     comodidades: [
@@ -263,7 +272,7 @@ export const cabanasData: Cabin[] = [
       "Ropa de cama",
       "Solarium"
     ],
-    dormir: "2 Dormitorios en total. (Plazas adaptables para 5/6 huéspedes)."
+    dormir: "1 cama matrimonial, 2 camas individuales y sofá cama en el living"
   },
 
 ];
@@ -275,14 +284,14 @@ export const momentosFotos = [
   // "/img/Fotos_bosque/foto_bosque_3.webp",
   // "/img/Fotos_bosque/foto_bosque_4.webp", 
   // "/img/Fotos_bosque/foto_bosque_5.webp",
-  "/img/Fotos_bosque/foto_bosque_6.webp",
+  "/img/foto-casa-de-te-y-feria/casa-de-te-4.webp",
   // "/img/Fotos_bosque/foto_bosque_7.webp",
-  "/img/Fotos_bosque/foto_bosque_8.webp",
+  "/img/foto-casa-de-te-y-feria/feria-de-Artesanos.webp",
   // "/img/Fotos_bosque/foto_bosque_9.webp",
   // "/img/Fotos_bosque/foto_bosque_10.webp",
   "/img/Fotos_bosque/foto_bosque_11.webp",
   "/img/Fotos_bosque/foto_bosque_12.webp",
-  "/img/Fotos_bosque/foto_bosque_13.webp",
+  "/img/foto-casa-de-te-y-feria/casa-de-te-2.webp",
   "/img/Fotos_bosque/foto_bosque_14.webp",
 
   // ...agrega todas las que necesites

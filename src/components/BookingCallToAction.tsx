@@ -8,7 +8,7 @@ interface BookingCallToActionProps {
 
 export default function BookingCallToAction({ onOpenBooking }: BookingCallToActionProps) {
   const whatsappUrl = `https://wa.me/5492235755054?text=${encodeURIComponent(
-    "Hola Sotobosque! Quiero consultar disponibilidad para mi próxima escapada al bosque."
+    "Hola Cabañas Sylviane! Quiero consultar disponibilidad para mi próxima escapada al bosque."
   )}`;
 
   return (
@@ -16,7 +16,7 @@ export default function BookingCallToAction({ onOpenBooking }: BookingCallToActi
       
       {/* Background Image of a dark, misty, gorgeous forest */}
       <img
-        src="\img\fondo_collage_cabanas.png"
+        src="/img/fondo_collage_cabanas.webp"
         alt="Bosque SotoBosque"
         className="absolute inset-0 w-full h-full object-cover scale-105 brightness-[0.65]"
       />

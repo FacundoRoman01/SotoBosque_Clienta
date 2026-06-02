@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-16 pb-4 border-b border-[#435843]/15">
           <div className="max-w-2xl">
             <span className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#CBBF9F] uppercase font-bold block mb-2">
-              06 · LA EXPERIENCIA en Cabañas Sylviane
+              05 · LA EXPERIENCIA en Cabañas Sylviane
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#2C3C2C] font-light tracking-tight leading-tight">
               Testimonios de <span className="text-italic-serif italic text-[#CBBF9F] font-normal">nuestros huéspedes</span>
