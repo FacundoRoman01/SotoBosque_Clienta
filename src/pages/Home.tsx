@@ -15,8 +15,8 @@ import { Cabin, momentosFotos } from "../data/mockData";
 import Footer from "../components/Footer";
 import TestimonialsSection from "../components/TestimonialsSection";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
-import Momentos from "../components/Momentos";
-import AboutUsSection from "../components/AboutUsSection";
+// import Momentos from "../components/Momentos";
+// import AboutUsSection from "../components/AboutUsSection";
 
 export default function Home() {
   const [selectedCabin, setSelectedCabin] = useState<Cabin | null>(null);
@@ -55,9 +55,9 @@ export default function Home() {
 
       {/* 03 · MOMENTOS SECTION (To ensure full website logic for Menu links) */}
       
-      <Momentos momentosFotos={momentosFotos} />
+      {/* <Momentos momentosFotos={momentosFotos} /> */}
 
-      <AboutUsSection />
+      {/* <AboutUsSection /> */}
       
 
       {/* 05 · SERVICIOS Y COMODIDADES */}

@@ -44,6 +44,14 @@ export const cabanasData: Cabin[] = [
       "/img/foto_cabana_1_webP/imagen_silvia_nuevo.webp",
       "/img/foto_cabana_1_webP/imagen-silvia-3.webp",
       "/img/foto_cabana_1_webP/imagen-silvia-4.webp",
+      "/img/foto_cabana_1_webP/foto-a.webp",
+      "/img/foto_cabana_1_webP/foto-b.webp",
+      "/img/foto_cabana_1_webP/foto-c.webp",
+      "/img/foto_cabana_1_webP/foto-d.webp",
+      "/img/foto_cabana_1_webP/foto-e.webp",
+      "/img/foto_cabana_1_webP/foto-f.webp",
+      "/img/foto_cabana_1_webP/foto-g.webp",
+      
     ],
     detalles: [
       "2 plantas",
@@ -92,6 +100,12 @@ export const cabanasData: Cabin[] = [
       "/img/foto-cabana-4/imagen_silvia_cabana4_5_.webp",
       "/img/foto-cabana-4/imagen_silvia_cabana4_6_.webp",
       "/img/foto-cabana-4/imagen_silvia_cabana4_7_.webp",
+      "/img/foto_cabaña_2_webP/fotocabana2-a.webp",
+      "/img/foto_cabaña_2_webP/fotocabana2-b.webp",
+      "/img/foto_cabaña_2_webP/fotocabana2-c.webp",
+      "/img/foto_cabaña_2_webP/fotocabana2-d.webp",
+      "/img/foto_cabaña_2_webP/fotocabana2-e.webp",
+      
     ],
     detalles: [
       "1 planta",
@@ -252,6 +266,9 @@ export const cabanasData: Cabin[] = [
       "/img/foto_casa_webp/casa-silvia-10.webp",
       "/img/foto_casa_webp/casa-silvia-11.webp",
       "/img/foto_casa_webp/casa-silvia-12.webp",
+      "/img/foto_casa_webp/casa-a.webp",
+      "/img/foto_casa_webp/casa-b.webp",
+      
     ],
     detalles: [
       "1 planta",
