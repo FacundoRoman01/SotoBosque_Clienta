@@ -88,18 +88,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-[#F7F4F0]/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-[#F7F4F0]/50">
+       <div className="border-t border-[#F7F4F0]/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-[#F7F4F0]/50">
           <p>Cabañas Sylviane © 2026. Todos los derechos reservados.</p>
 
           <p className="flex items-center gap-1.5 mt-2 sm:mt-0">
             Desarrollado por{" "}
             <a
-              href="https://goestudi-agencia.vercel.app/"
+              href="https://mfstudio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#F7F4F0] transition-colors"
             >
-              GOestudi Agencia
+              MF Studio
             </a>
           </p>
         </div>
