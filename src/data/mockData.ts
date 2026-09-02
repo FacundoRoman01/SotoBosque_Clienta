@@ -51,6 +51,7 @@ export const cabanasData: Cabin[] = [
       "/img/foto_cabana_1_webP/foto-e.webp",
       "/img/foto_cabana_1_webP/foto-f.webp",
       "/img/foto_cabana_1_webP/foto-g.webp",
+      "/img/foto_cabana_1_webP/imagen-silvia-5.webp"
       
     ],
     detalles: [
@@ -290,6 +291,50 @@ export const cabanasData: Cabin[] = [
       "Solarium"
     ],
     dormir: "1 cama matrimonial, 2 camas individuales y sofá cama en el living"
+  },
+  //nuevo
+  {
+    id: "duplex-punta-mogotes",
+    numero: "DUPLEX",
+    nombre: "Duplex Punta Mogotes",
+    tagline: "CONFORT Y CERCANÍA A LA PLAYA",
+    huespedes: "6",
+    ambientes: 4,
+    dormitorios: "2",
+    banos: 2,
+    direccion: "Mediano 3362. A 4 cuadras de la playa, balneario 2.",
+mapaIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.612679576103!2d-57.5487663!3d-38.0794004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584e74c388115b1%3A0x287d5b3d2d563035!2sMedrano%203362%2C%20B7603DNL%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1788370096996!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    // precio: "$150.000",
+    descripcion: "Hermoso dúplex con capacidad para 6 huéspedes, ubicado a solo 4 cuadras de la playa y del balneario 2. Cuenta con amplio living-comedor, patio con parrilla y espacio privado para guardar un vehículo.",
+    imagen: "/img/casa_puntamogotes/foto2_puntamogotes.webp",
+    galeria: [
+      "/img/casa_puntamogotes/foto2_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto1_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto3_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto4_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto5_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto6_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto7_puntamogotes.webp",
+      "/img/casa_puntamogotes/foto8_puntamogotes.webp",
+    ],
+    detalles: [
+      "2 plantas",
+      "Patio con parrilla",
+      "Espacio para vehículo",
+      "A 4 cuadras del mar"
+    ],
+    distintivo: [
+      "A 4 cuadras de la playa",
+      "Espacio privado para guardar un vehículo",
+      "Amplio living-comedor para disfrutar en familia"
+    ],
+    comodidades: [
+      "Wi-Fi",
+      "Patio con parrilla",
+      "Espacio para guardar un vehículo",
+      "A 4 cuadras del Mar"
+    ],
+    dormir: "Planta baja: dormitorio matrimonial. Planta alta: dos dormitorios con 2 camas individuales."
   },
 
 ];

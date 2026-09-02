@@ -17,13 +17,13 @@ export default function WelcomeSection() {
         className="max-w-3xl flex flex-col items-center gap-6 md:gap-8 relative z-15"
       >
         {/* Section number & label */}
-        <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
+        {/* <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
           01 · BIENVENIDA
-        </p>
+        </p> */}
 
         {/* Large quote in Serif Italic */}
         <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[46px] leading-[1.25] text-[#435843] font-light italic px-4 md:px-8">
-          "Que la única decisión del día sea qué silencio elegir"
+          Que la única decisión del día sea qué silencio elegir
         </blockquote>
 
         {/* Thick elegant spacer line */}
@@ -31,7 +31,7 @@ export default function WelcomeSection() {
 
         {/* Small descriptive text below */}
         <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/80 leading-relaxed max-w-xl font-light">
-         Hace más de 20 años que recibimos gente en Mar del Plata. No tenemos un solo lugar — tenemos cinco. Cada uno pensado para que llegues, dejes la mochila y te olvides de mirar la hora.
+         Hace más de 20 años que recibimos gente en Mar del Plata. Cada lugar pensado para que llegues, dejes la mochila y te olvides de mirar la hora.
         </p>
       </motion.div>
     </section>

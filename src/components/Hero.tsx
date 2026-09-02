@@ -44,7 +44,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               variants={itemVariants}
               className="font-sans text-[7px] sm:text-xs tracking-[0.25em] font-semibold text-[#F7F4F0]/75 uppercase"
             >
-              CABAÑAS PREMIUM · MAR DEL PLATA
+              ALQUILER DE CABAÑAS & CASAS EN MAR DEL PLATA
             </motion.p>
 
             {/* Título optimizado con breakpoints fluidos para que no rompa en la notebook */}
@@ -52,16 +52,15 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               variants={itemVariants}
               className="font-serif text-[40px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[75px] leading-[1.08] tracking-tight text-white font-light"
             >
-              Que la única decisión del día <br />
-              sea respirar profundo y <br />
-              <span className="text-italic-serif italic font-light text-[#CBBF9F] tracking-wide">dejarte llevar.</span>
+            Alojamientos para disfrutar en Mar del Plata <br />
+              <span className="text-italic-serif italic font-light text-[#CBBF9F] tracking-wide"> de distintas maneras.</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="font-sans text-xs sm:text-sm md:text-base leading-relaxed text-[#F7F4F0]/85 font-light max-w-md"
             >
-              Cinco lugares para quedarse en Mar del Plata. Tres cabañas escondidas en el bosque, una casa en la sierra y un refugio cerca del mar.
+              Uno de los principales atractivos es la ubicación cerca del Bosque Peralta Ramos y otros puntos de Mar del Plata, elegidos para disfrutar la ciudad y sus alrededores.
             </motion.p>
 
             <motion.div

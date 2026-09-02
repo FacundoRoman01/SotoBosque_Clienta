@@ -30,7 +30,7 @@ export default function BookingCallToAction({ onOpenBooking }: BookingCallToActi
         
         {/* Step label / upper details indicator */}
         <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#CBBF9F] uppercase font-bold animate-fade-in-up">
-          07 · RESERVÁ TU FECHA
+           RESERVÁ TU FECHA
         </p>
 
         {/* Hero typography title */}

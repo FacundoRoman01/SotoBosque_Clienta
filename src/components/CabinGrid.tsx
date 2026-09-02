@@ -26,15 +26,15 @@ export default function CabinGrid({ onOpenDetails }: CabinGridProps) {
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
         {/* Title Group - Styled perfectly according to Image 3 */}
         <div className="max-w-3xl flex flex-col gap-4 text-left">
-          <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
+          {/* <p className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-[#435843]/60 uppercase font-semibold">
             02 · LOS ALOJAMIENTOS
-          </p>
+          </p> */}
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#435843] font-light leading-tight">
-            Cinco lugares,{" "}
-            <span className="text-italic-serif italic">una sola idea.</span>
+            Conocé nuestros {" "}
+            <span className="text-italic-serif italic">alojamientos</span>
           </h2>
           <p className="font-sans text-xs sm:text-sm md:text-base text-[#435843]/85 max-w-xl font-light leading-relaxed">
-            Diseñadas para distintos modos de descansar. Tocá cada tarjeta para ver fotos, comodidades y disponibilidad.
+            Seis propiedades, distintas ubicaciones y diferentes formas de disfrutar tu estadía en Mar del Plata. Elegí la que mejor se adapte a tu viaje.
           </p>
         </div>
 
