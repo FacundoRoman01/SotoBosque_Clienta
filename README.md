@@ -27,4 +27,5 @@ Al gestionar múltiples unidades con características y capacidades muy distinta
 
 ---
 
-<img width="1920" height="6078" alt="screencapture-alojamientosvillaelisa-2026-11-22-18_07_32" src="https://github.com/user-attachments/assets/47626762-3165-45a6-ac93-f6f8d9aff3a6" />
+<img width="1920" height="10635" alt="screencapture-xn-sylvianecabaas-1nb-2026-11-22-18_12_48" src="https://github.com/user-attachments/assets/8c7e87b6-be8d-4fb0-b5b0-705a586db094" />
+
