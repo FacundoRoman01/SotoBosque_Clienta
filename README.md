@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Cabañas Sylviane — Plataforma Web de Alquiler Temporario 🌲🏡
 
-# Run and deploy your AI Studio app
+Sitio web en producción desarrollado para **Cabañas Sylviane** ([sylvianecabañas.com](https://xn--sylvianecabaas-1nb.com/)), un complejo turístico con más de 20 años de trayectoria ubicado en el **Bosque Peralta Ramos y Punta Mogotes, Mar del Plata**. La plataforma centraliza su catálogo de seis propiedades y optimiza la captación de reservas directas.
 
-This contains everything you need to run your app locally.
+🔗 **Demo en vivo:** [https://sylvianecabañas.com/](https://xn--sylvianecabaas-1nb.com/)
 
-View your app in AI Studio: https://ai.studio/apps/6b0ca000-6857-414c-b54f-8235b7ec82b7
+---
 
-## Run Locally
+## 🎯 Problema de Negocio y Solución
 
-**Prerequisites:**  Node.js
+Al gestionar múltiples unidades con características y capacidades muy distintas (desde cabañas familiares en el bosque hasta un dúplex cercano a la playa), la atención manual por mensajes suele generar consultas repetitivas y fricción antes de cerrar una estadía.
 
+**Qué resuelve esta plataforma:**
+* **Catálogo estructurado de 6 unidades:** Permite a cada huésped filtrar y comparar rápidamente capacidad (de 4 a 8 personas), cantidad de ambientes, distribución y equipamiento diferencial (pileta con cascada, sala de juegos, quincho cerrado, fogón exterior o cercanía a la playa).
+* **Conversión directa vía WhatsApp:** Cada propiedad cuenta con accesos directos a consulta por WhatsApp, acortando el embudo de reserva y evitando comisiones de plataformas intermediarias.
+* **Prueba social y contexto turístico:** Integra reseñas reales de huéspedes, actividades en el Bosque Peralta Ramos (como cabalgatas) y distancias clave en minutos a playas, centro comercial y aeropuerto para acelerar la decisión de viaje.
+* **Bajo costo operativo y alta velocidad:** Arquitectura frontend estática desplegada en producción con dominio internacionalizado (IDN) y tiempos de carga optimizados para navegación móvil.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 🛠️ Stack Tecnológico
+
+* **Frontend:** React, TypeScript, Vite
+* **Animaciones y UI:** Framer Motion, CSS3 responsivo (*mobile-first*)
+* **Integraciones:** Enlaces dinámicos a WhatsApp Business y Google Maps
+* **Despliegue y Hosting:** Build optimizado de producción desplegado en Hostinger con dominio `.com` (IDN) y certificado SSL
+
+---
+
+<img width="1920" height="6078" alt="screencapture-alojamientosvillaelisa-2026-11-22-18_07_32" src="https://github.com/user-attachments/assets/47626762-3165-45a6-ac93-f6f8d9aff3a6" />
